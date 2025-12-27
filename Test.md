@@ -16,3 +16,8 @@ This section is only to mention that issue and to mention as well a problem on o
 
 If no other commit regarding this issues, that is because the **git push origin Main** worked corrrectly.
 
+---
+
+The problem on the **commit** command was solved by modifying the file we want to create a new commit to.
+
+The problem on the **push** command was solved by not typing the file name on the prompt, the prompt line is only **git push**
