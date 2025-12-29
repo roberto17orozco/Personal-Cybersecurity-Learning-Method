@@ -1,7 +1,7 @@
 # This is my first VS Code file
 
-This file is only to create my first code file and see on what format it is created.
-Further additions may be to learn its features.
+This file is only to create my first VS Code file and see on what format it is created.
+Further lines may be added to learn its features.
 
 ---
 
