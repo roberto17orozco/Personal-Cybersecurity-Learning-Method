@@ -10,7 +10,7 @@ Linux fundamentals and Windows fundamentals  as I build my foundation in Cyberse
 ---
 ## Progress Tracker
 
-| :---: | Module / Room | Status |
+| Module / Room | Status |
 | :---: | :---: | :---: | 
 | 1 | Cyber Introduction | [ ] |
 | 2 | Network Fundamentals | [ ] |
