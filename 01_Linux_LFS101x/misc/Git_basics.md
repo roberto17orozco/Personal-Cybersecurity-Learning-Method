@@ -18,7 +18,40 @@ This repository will have two functions:
 5. `git init` to turn the directory into a *repository.*
 6. `git remote add origin <repository URL>` to link the local repository to GitHub URL repository.
 7. `git push --set-upstream origin Main` to send the Main branch to the GitHub URL.
+
 ### Uploading files to the repository
+Lets asume that you have created new files, changed the name for some of them, etc.
+1. `git status` to verify what is happening in repository.
+    * `On Branch Main` means you are working on that branch. Everything you do reflects on that branch.
+    * `Your branch is ahead of 'origin/Main' by 1 commit.
+  (use "git push" to publish your local commits)`. 
+    "Your branch" is the local one the one on your Linux system, and "origin/Main" is the URL's. 
+    * `Changes not staged for commit` means that you have made changes on your Linux directory, but they are not ready to **commit.**
+        * Most probably you will find something like this:
+        
+            - deleted:    ../First_VSCode_file.md
+            - deleted:    ../Nano_and_Git_Add_Commit_and_Push_notes.md
+            - deleted:    Kernel_panic.md
+        * Those are the files you have deleted, duplicated or removed. In that case, use `git add -u` to add *deleted* and *modified* files on the next **commit.**
+        * `git commit -m "Confirm file deletions"`
+        * `git push` now those files will be removed from *local git* and the *URL repository.*
+        * Verify your `git status` the `Changes not staged for commit` won't be there anymore.
+    * The next section of the `git status` is the `Untracked files:`. This are new files that haven't been added to be commited and then pushed.
+    * You can work them one by one, but if you are sure they are all **new files** and the commit description will be the same for all you can add, commit and push them all at once.
+2. `git add .` to add only new and modified files. You have to be at the directory where the files are located.
+3. `git commit -m "Add newly created files to repository"`
+4. `git push`
+5. Verify your `git status`you will se now: **Your branch is up to date with 'origin/Main'.**
+
+* Now all the files on your local repository are on [GitHub](http://github.com) too and they are on the correct directories.
+* Usage of `git add -u` is very important because you separate changed and deleted files from `untracked` newly created files with a single detailed **commit** for both cases. This keeps your repository clean and organized.
+
+Thanks for reading.
+
+-Roberto Orozco
+
+
+
 
 
 
