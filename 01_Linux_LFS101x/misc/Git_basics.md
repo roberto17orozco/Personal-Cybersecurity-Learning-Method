@@ -25,7 +25,7 @@ Lets asume that you have created new files, changed the name for some of them, e
     * `On Branch Main` means you are working on that branch. Everything you do reflects on that branch.
     * `Your branch is ahead of 'origin/Main' by 1 commit.
   (use "git push" to publish your local commits)`. 
-    "Your branch" is the local one the one on your Linux system, and "origin/Main" is the URL's. 
+    "Your branch" is the local one, the one on your Linux system, and "origin/Main" is the URL's. 
     * `Changes not staged for commit` means that you have made changes on your Linux directory, but they are not ready to **commit.**
         * Most probably you will find something like this:
         
@@ -45,6 +45,25 @@ Lets asume that you have created new files, changed the name for some of them, e
 
 * Now all the files on your local repository are on [GitHub](http://github.com) too and they are on the correct directories.
 * Usage of `git add -u` is very important because you separate changed and deleted files from `untracked` newly created files with a single detailed **commit** for both cases. This keeps your repository clean and organized.
+
+### Updating changes on existing files
+For specific files that already exist and have been *pushed* to the GitHub repository the workflow is:
+1. Use `git add <file name>`
+2. `git commit -m "commit description">`
+3. `git push`
+
+### When your repository is up to date
+When your repository is up to date you will see the following lines:
+
+>git status
+
+>On branch Main
+
+>Your branch is up to date with 'origin/Main'.
+
+>nothing to commit, working tree clean
+
+---
 
 Thanks for reading.
 
