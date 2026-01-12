@@ -9,3 +9,6 @@ This file contains the Kali directories where you can find the **wordlists** fil
     * /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt
 
 
+Words
+bank-transfer
+
