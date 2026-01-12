@@ -6,6 +6,11 @@ This file contains a variety of useful commands. They will be added as I progres
 
 2. `sudo apt full-upgrade -y` to upgrade the system.
 3. `sudo apt update && sudo apt full-upgrade -y` to update and upgrade at one time.
+4. `xfce4-settings-manager` to open general/system configuration window.
+    * `xfce4-keyboard-settings` to go directly to keyboard settings.
+    * `xfce4-display-settings` to go directly to screen settings.
+    * `xfce4-appearance-settings` to go directly to appearance settings.
+
 
 
 
