@@ -10,6 +10,10 @@ This file contains a variety of useful commands. They will be added as I progres
     * `xfce4-keyboard-settings` to go directly to keyboard settings.
     * `xfce4-display-settings` to go directly to screen settings.
     * `xfce4-appearance-settings` to go directly to appearance settings.
+5. `ps aux | grep <process name>` to identify process ID number.
+6. `kill <process number>` to kill that process. It is useful for process that cannot be cancelled with `Ctrl + C` or `q` at the terminal where the process is being ran.
+7. `sudo apt install <application name>` to install new applications or programs.
+
 
 
 
@@ -26,4 +30,5 @@ This file contains a variety of useful commands. They will be added as I progres
 8. `sudo find / -name "First_VSCode_file.md" 2>/dev/null` to find and search in the whole Linux system.
 
 ## Networking
-
+1. `nm-connection-editor` to open conection editor window. It  works to change some configuration options for **IPv4** like *Method* or *DNS servers*. 
+2. `nmcli device status` used to know what is my active connection.
