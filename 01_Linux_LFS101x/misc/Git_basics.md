@@ -74,6 +74,19 @@ This may happen, specially if you are changing routes to re-organize your file s
 2. `git commit -m "description"`.
 3. `git push`.
 
+
+### To remove files or directories from STAGING
+Sometimes you may change your mind after adding `git add .` files or directories. To remove those from the **staging** area:
+1. `git restore --staged <file/directory name>`
+
+
+
+
+### .gitignore
+To avoid **Git** to push some selected files and directories you will have to add their names (for files) or paths (for directories) to file **.gitignore**.
+1. Locate **.gitignore** file, should be on your repository main directory on your system.
+2. Open it and write the exact name for the file on a line.
+3. Type the exact path for the directory you want to Git to ignore, if it is not a direct directory to the main one, you should type the complete route begining with the next directory after the main one. 
 ---
 
 Thanks for reading.
