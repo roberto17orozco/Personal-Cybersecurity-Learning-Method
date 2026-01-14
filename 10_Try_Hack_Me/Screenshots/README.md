@@ -1,0 +1,1 @@
+This directory serves to manage different directories containing screenshots mainly related to THM machine tasks.
