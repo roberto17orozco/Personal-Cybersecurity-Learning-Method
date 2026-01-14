@@ -49,7 +49,7 @@ Now ...
 15. Now try `ping google.com` again.
 16. It worked propperly, now ..
 17. `sudo apt install gimp`
-18. Process completed with no errors.
+18. Process completed with no errors. 👍
 
 
 * For me, editing IPv4 configuration on NetworkManager was the solution. After following the steps indicated above, I got `ping google.com` working.
