@@ -190,7 +190,7 @@ Here are 4 different things that can be distinguished from the THM instructions 
 4. The task also indicates you to run `gobuster -u http://fakebank.thm -w wordlist.txt dir`.
 	* is indicating the use of a wordlist with `-w wordlist.txt`.
 5. Since the wordlists on my system doesn't have the line `bank-transfer` I created a file named *Wordlists_for_THM.md.* and included to it.
-6. That way I can now run `gobuster -u http://10.65.134.38/ -w Wordlists_for_THM.md` and as result I get:
+6. That way I can now run `gobuster dir -u http://10.65.134.38/ -w Wordlists_for_THM.md` and as result I get:
 > /bank-transfer (Status:200)
 
 That status 200 is an http code that means it is a valid route, server found that route, server responded with content, no re-routing or error.
