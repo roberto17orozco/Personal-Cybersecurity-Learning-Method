@@ -1,1 +1,0 @@
-This directory contains different directories related to THM Pre Security learning path.

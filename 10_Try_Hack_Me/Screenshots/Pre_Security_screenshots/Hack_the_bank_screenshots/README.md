@@ -1,1 +1,0 @@
-This directory contains snapshots for task "Hack the bank"
