@@ -1,6 +1,10 @@
 # Commands
 This file contains a variety of useful commands. They will be added as I progress on my study.
 
+
+
+
+
 ## System
 1. `sudo apt update` to update the system.
 
@@ -25,9 +29,12 @@ This file contains a variety of useful commands. They will be added as I progres
 2. `touch <file name>` to create a new file.
 3. `cat <file name>` to read a file content on terminal.
 4. `rm <file name>` to remove a file.
-6. `rmdir <directory name>` to remove a directory.
+6. `rmdir <directory name>` to remove **empty** directories.
+6. `rm -rf <directory name>` to remove directories with content.
 7. `find ~ -name "file_name" 2>/dev/null` To search a file in `/home` directory. Excecute it at `/home`.
 8. `sudo find / -name "First_VSCode_file.md" 2>/dev/null` to find and search in the whole Linux system.
+9. `mv * /new/directory/tothefiles` this is used to move **all** the files from one file to another. You have to be located on the directory where the files are located.
+10. `mv *.png /new/directory/tothefiles` is the same as the last one, the diference here is that you are only moving **.png** files.
 
 ## Networking
 1. `nm-connection-editor` to open conection editor window. It  works to change some configuration options for **IPv4** like *Method* or *DNS servers*. 
