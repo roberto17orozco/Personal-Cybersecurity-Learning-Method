@@ -63,6 +63,17 @@ When your repository is up to date you will see the following lines:
 
 >nothing to commit, working tree clean
 
+### Remove a directory from your repository but keep it on your file system
+
+This may happen, specially if you are changing routes to re-organize your file system and repo as well.
+
+1. `git rm -r --cached <the directory you want to remove>` you have to excecute this on the directory that contains the directory you want to remove.
+
+### Add a directory to your repository
+1. Simply excecute `git add <directory name>` on the directory that contains the directory you want to add. Remember, the new added directory must have a file, e.g. a *README.md.*
+2. `git commit -m "description"`.
+3. `git push`.
+
 ---
 
 Thanks for reading.
