@@ -19,7 +19,7 @@ Having a little bit of a trouble on creating a new **commit** for an existing fi
 
 This section is only to mention that issue and to mention as well a problem on operating the **push** command.
 
-If no other commit regarding this issues, that is because the **git push origin Main** worked corrrectly.
+If no other commit regarding this issues, that is because the **git push origin Main** worked correctly.
 
 ---
 
