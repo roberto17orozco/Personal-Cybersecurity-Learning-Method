@@ -32,14 +32,14 @@ Lets asume that you have created new files, changed the name for some of them, e
             - deleted:    ../First_VSCode_file.md
             - deleted:    ../Nano_and_Git_Add_Commit_and_Push_notes.md
             - deleted:    Kernel_panic.md
-        * Those are the files you have deleted, duplicated or removed. In that case, use `git add -u` to add *deleted* and *modified* files on the next **commit.**
+        * Those are the files you have deleted, duplicated or removed. In that case, use `git add -u` to add *deleted* and *modified* files on the next **commit.**. The -u option is for update.
         * `git commit -m "Confirm file deletions"`
         * `git push` now those files will be removed from *local git* and the *URL repository.*
         * Verify your `git status` the `Changes not staged for commit` won't be there anymore.
     * The next section of the `git status` is the `Untracked files:`. This are new files that haven't been added to be commited and then pushed.
     * You can work them one by one, but if you are sure they are all **new files** and the commit description will be the same for all you can add, commit and push them all at once.
 2. `git add .` to add only new and modified files. You have to be at the directory where the files are located.
-3. `git commit -m "Add newly created files to repository"`
+3. `git commit -m "Add newly created files to repository"` (-m option is for message).
 4. `git push`
 5. Verify your `git status`you will se now: **Your branch is up to date with 'origin/Main'.**
 
@@ -80,7 +80,10 @@ Sometimes you may change your mind after adding `git add .` files or directories
 1. `git restore --staged <file/directory name>`
 
 
-
+### To see the history of your commits
+1.- To see what commits you have done to specific files execute:
+`git log -10 --name-only --oneline`
+Where "-10" is the number of commits you desire to take a look at.
 
 ### .gitignore
 To avoid **Git** to push some selected files and directories you will have to add their names (for files) or paths (for directories) to file **.gitignore**.
