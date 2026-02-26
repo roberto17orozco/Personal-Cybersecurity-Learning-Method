@@ -31,10 +31,16 @@ This file contains a variety of useful commands. They will be added as I progres
 4. `rm <file name>` to remove a file.
 6. `rmdir <directory name>` to remove **empty** directories.
 6. `rm -rf <directory name>` to remove directories with content.
-7. `find ~ -name "file_name" 2>/dev/null` To search a file in `/home` directory. Excecute it at `/home`.
-8. `sudo find / -name "First_VSCode_file.md" 2>/dev/null` to find and search in the whole Linux system.
-9. `mv * /new/directory/tothefiles` this is used to move **all** the files from one file to another. You have to be located on the directory where the files are located.
-10. `mv *.png /new/directory/tothefiles` is the same as the last one, the diference here is that you are only moving **.png** files.
+7. `find ~ -name "file_name" 2>/dev/null` To search any element in `/home` directory. Excecute it at `/home`.
+8. `find ~ -name "K*" 2>/dev/null` To search any element in `/home` directory where you know the name of the file starts with "K" but know no more.
+9. `find ~ -name "*1*" 2>/dev/null` To search any element in `/home` where you know tne name of the file cointains a "1" but know not more.
+10. `find / -name "file_name" 2>/dev/null` To search any element in `/` (the root, the whole system). Search takes longer. It looks in `/` instead of looking in `/home`.
+11. `find / -type f -name "K*" 2>/dev/null` To search any **file** in the whole system `/` that starts its name with a "K". Notice the **-type f** option is enabled, thus the search will limit to only looking for **files**.
+12. `find ~ -type f -name "K*" 2>/dev/null` To search for any **file** in the `/home` directory that starts its name with a "K".
+13. Use `2>/dev/null` only if you are searching in the whole system. This string avoids error printing.
+14. `sudo find / -name "First_VSCode_file.md" 2>/dev/null` to find and search in the whole Linux system.
+15. `mv * /new/directory/tothefiles` this is used to move **all** the files from one file to another. You have to be located on the directory where the files are located.
+16. `mv *.png /new/directory/tothefiles` is the same as the last one, the diference here is that you are only moving **.png** files.
 
 ## Networking
 1. `nm-connection-editor` to open conection editor window. It  works to change some configuration options for **IPv4** like *Method* or *DNS servers*. 
