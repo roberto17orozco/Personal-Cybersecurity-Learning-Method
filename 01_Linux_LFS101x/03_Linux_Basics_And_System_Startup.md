@@ -53,7 +53,7 @@ To enter the BIOS/UEFI on a Virtual Machine:
 4. To exit, highlight Continue and press Enter to resume the boot process.
 
 #### BIOS/UEFI screen on a VM
-![VBoxBIOS](screenshots/3.4_BIOS.jpg)
+![VBoxBIOS](Linux_LFS101X_screenshots/3.4_BIOS.jpg)
 
 
 
@@ -74,7 +74,7 @@ Entering GRUB allows you to:
 * System failure analysis.
 
 #### Grand Unified Boot Loader (GRUB) screen on a Kali system
-![GRUB](screenshots/3.1_GRUB.jpg)
+![GRUB](Linux_LFS101X_screenshots/3.1_GRUB.jpg)
 
 
 
@@ -85,7 +85,7 @@ Press **e** on the GRUB screen to:
 
 #### e option on GRUB
 
-![GRUB with e option](screenshots/3.2_GRUB_e_option.jpg)
+![GRUB with e option](Linux_LFS101X_screenshots/3.2_GRUB_e_option.jpg)
 
 
 
@@ -98,7 +98,7 @@ Press **c** on the GRUB screen to:
 * It is nos a Linux Shell, it is a **GRUB Shell**.
 
 #### c option on GRUB
-![GRUB with c option](screenshots/3.3_GRUB_c_option.jpg)
+![GRUB with c option](Linux_LFS101X_screenshots/3.3_GRUB_c_option.jpg)
 
 
 
