@@ -52,7 +52,7 @@ To enter the BIOS/UEFI on a Virtual Machine:
 3. If using Legacy BIOS mode, press F2 right after powering on.
 4. To exit, highlight Continue and press Enter to resume the boot process.
 
-
+#### BIOS/UEFI screen on a VM
 ![VBoxBIOS](screenshots/3.4_BIOS.jpg)
 
 
