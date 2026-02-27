@@ -27,6 +27,16 @@
 7. **Desktop Enviroment**: is a Graphical User Interface **on top of the OS**. Some examples are GNOME, KDE, Xfce and Fluxbox.
 8. **Command Line**: is an interface for **typing commands** on top of the OS.
 9. **Shell**: command line interpreter that interprets the CL (Command Line) input and instructs the OS to perform tasks and commands.
+
+#### Graphical User Interface Gnome used on Ubuntu
+![Graphical User Interface **GNOME** used on Ubuntu](screenshots/2.1_GNOME.jpg)
+
+
+#### Graphical User Interface Xfce used on Kali
+![Graphical User Interface **Xfce** used on Kali](screenshots/2.2_Xfce_Desktop_Enviroment.jpeg) 
+
+
+
 ---
 ### Additional concepts
 1. Some critical actions that work diferently on different Linux distros are:
