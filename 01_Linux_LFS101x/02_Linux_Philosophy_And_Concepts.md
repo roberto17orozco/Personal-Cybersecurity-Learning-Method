@@ -29,11 +29,11 @@
 9. **Shell**: command line interpreter that interprets the CL (Command Line) input and instructs the OS to perform tasks and commands.
 
 #### Graphical User Interface Gnome used on Ubuntu
-![Graphical User Interface **GNOME** used on Ubuntu](screenshots/2.1_GNOME.jpg)
+![Graphical User Interface **GNOME** used on Ubuntu](Linux_LFS101X_screenshots/2.1_GNOME.jpg)
 
 
 #### Graphical User Interface Xfce used on Kali
-![Graphical User Interface **Xfce** used on Kali](screenshots/2.2_Xfce_Desktop_Enviroment.jpeg) 
+![Graphical User Interface **Xfce** used on Kali](Linux_LFS101X_screenshots/2.2_Xfce_Desktop_Enviroment.jpeg) 
 
 
 
