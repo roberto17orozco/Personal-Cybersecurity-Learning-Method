@@ -53,7 +53,8 @@ To enter the BIOS/UEFI on a Virtual Machine:
 4. To exit, highlight Continue and press Enter to resume the boot process.
 
 
-![VBoxBIOS](screenshots/3.4%20BIOS.jpg)
+![VBoxBIOS](screenshots/3.4_BIOS.jpg)
+
 
 
 
@@ -75,12 +76,15 @@ Entering GRUB allows you to:
 ![GRUB](screenshots/3.1_GRUB.jpg)
 
 
+
 Press **e** on the GRUB screen to:
 * Edit kernel parameters.
 * Enter on recovery mode.
 * Initialize with later kernerls.
 
-![GRUB with e option](screenshots/3.2_GRUB%20e%20option.jpg)
+![GRUB with e option](screenshots/3.2_GRUB_e_option.jpg)
+
+
 
 Press **c** on the GRUB screen to:
 * Open internal GRUB console: it is a basic enviroment where you can execute booting commands.
@@ -90,7 +94,8 @@ Press **c** on the GRUB screen to:
 * Fix damaged start-up programs.
 * It is nos a Linux Shell, it is a **GRUB Shell**.
 
-![GRUB with c option](screenshots/3.3_GRUB%20c%20option.jpg)
+![GRUB with c option](screenshots/3.3_GRUB_c_option.jpg)
+
 
 
 
