@@ -73,6 +73,7 @@ Entering GRUB allows you to:
 * Acces a **shell root** without a password.
 * System failure analysis.
 
+#### Grand Unified Boot Loader (GRUB) screen on a Kali system
 ![GRUB](screenshots/3.1_GRUB.jpg)
 
 
@@ -81,6 +82,8 @@ Press **e** on the GRUB screen to:
 * Edit kernel parameters.
 * Enter on recovery mode.
 * Initialize with later kernerls.
+
+#### e option on GRUB
 
 ![GRUB with e option](screenshots/3.2_GRUB_e_option.jpg)
 
@@ -94,6 +97,7 @@ Press **c** on the GRUB screen to:
 * Fix damaged start-up programs.
 * It is nos a Linux Shell, it is a **GRUB Shell**.
 
+#### c option on GRUB
 ![GRUB with c option](screenshots/3.3_GRUB_c_option.jpg)
 
 
