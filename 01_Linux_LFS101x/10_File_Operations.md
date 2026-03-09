@@ -345,7 +345,116 @@ It is empty on the disk partition when it is not mounted.
     #### rsync on the same machine
     ![rsync](Linux_LFS101X_screenshots/10.12_rsync.jpg)
 
-    
+### 27.- Compressing data
+1. File data is often compressed to save disk space and reduce the time it takes to transmit files over networks.
+2. Linux uses a number of methods to perform this compression, including:
+
+| Command | Description |
+|---------|-------------|
+| `gzip`  | The most common compression utility used in Linux. |
+| `bzip2` | Produces significantly smaller files than those created with gzip. |
+| `xz`    | The most space‑efficient compression utility available on Linux. |
+| `zip`   | Often required to inspect and decompress archives from other operating systems. |
+
+3. `tar` is often used to group files in an archive and then compress the whole archive at one.
+
+### 28.- Compressing Data using gzip
 
 
+| Command | Description |
+|---------|-------------|
+| `gzip *` | Compresses all files in the current directory. Each file is compressed and renamed with a **.gz** extension. |
+| `gzip -r projectX` | Compresses all files inside the `projectX` directory, including all subdirectories. |
+| `gunzip foo` | Decompresses **foo** from the file **foo.gz**. Internally, `gunzip` works the same as `gzip -d`. |
+
+#### gzip * usage
+![gzip](Linux_LFS101X_screenshots/10.13_gzip.jpg)
+
+#### De-compressing with gunzip
+![gunzip](Linux_LFS101X_screenshots/10.14_guzip.jpg)
+
+
+
+
+
+### 29.- Compressing data using bzip2
+1. It is more likely to use it on larger files because it producess smaller files but it takes more time.
+
+| Command | Description |
+|---------|-------------|
+| `bzip2 *` | Compresses all files in the current directory. The resulting files use the **.bz2** extension. |
+| `bunzip2 *.bz2` | Decompresses all files with the **.bz2** extension in the current directory. It works the same as `bzip2 -d`. |
+
+* `bzip2` suffers lack of maintenance. It should no longer be used to compress, only to decompress **.bzip2** files.
+
+### 30.- Compressing data using xz
+1. Is the most space-efficient compression utility frequently used in LInux and is the choice for distributing and storing archives of the LInux kernel.
+2. It trades a slower compression speed for an even higher compression ratio.
+3. Is the dominant compression method, specially for large files which may need to be downloaded from the internet.
+
+
+
+| Command | Description |
+|---------|-------------|
+| `xz *` | Compresses all files in the current directory and replaces each file with one using the **.xz** extension. |
+| `xz foo` | Compresses `foo` into **foo.xz** using the default compression level (`-6`) and removes the original file if compression succeeds. |
+| `xz -dk bar.xz` | Decompresses **bar.xz** into `bar` and **keeps** the original `bar.xz` file even if decompression is successful. |
+| `xz -dcf a.txt b.txt.xz > abcd.txt` | Decompresses a mix of compressed and uncompressed files to standard output using a single command, redirecting the result into `abcd.txt`. |
+| `xz -d *.xz` | Decompresses all files in the current directory that were compressed using `xz`. |
+
+### 31.- Handling files using zip
+`zip`       is only needed when you get a zipped file from a WIndows user or Internet downloads. It is a legacy program, it is neither fast nor efficient.
+`zip backup *`      Compresses all files in the curren directory and places them in the **backuup.zip** file.
+`zip -r backup.zip ~`       Archives your login directory (**~**) and all files and directories under it in **backup.zip**.
+`unzip backup.zip`      Extracts all files in **backup.zip** and places them in the current directory.
+
+### 32.- Archiving and compressing data using tar
+1. Historically `tar` stood for "tape archive" and was used to archive files to a magnetic tape.
+2. It allows you to create or extract files from an archive file, often called **tarball** and decompress while extracting its contents.
+
+| Command | Description |
+|---------|-------------|
+| `tar -xvf mydir.tar` | Extracts all files from **mydir.tar** into the **mydir** directory. |
+| `tar -zcvf mydir.tar.gz mydir` | Creates an archive of `mydir` and compresses it using **gzip**. |
+| `tar -jcvf mydir.tar.bz2 mydir` | Creates an archive of `mydir` and compresses it using **bzip2**. |
+| `tar -Jcvf mydir.tar.xz mydir` | Creates an archive of `mydir` and compresses it using **xz**. |
+| `tar -xvf mydir.tar.gz` | Extracts all files from **mydir.tar.gz** into the `mydir` directory. Note: you do **not** need to tell `tar` that it is gzip‑compressed. |
+
+
+
+* Use of dashes (**-**) before options is often done, although it is usually unnecessary as in the `tar xvf mydir.tar`.
+
+### 33.- Compressing and decompressing using tar
+1. `tar -Jcvf 01_Linux_LFS101x.tar.xz 01_Linux_LFS101x`
+* Where:
+    1. **01_Linux_LFS101x.tar.xz**: is the name of the created compressed file.
+    2. **01_Linux_LFS101x**: is the directory you want to compress.
+    3. `-J`: is for **xz** compression.
+    4. `-c`: creates a new tar file.
+    5. `-v`: verbose (shows the files meanwhile they are added to the compressed file).
+    6. `-f`: specifies the compressed file name.
+2. The file **01_Linux_LFS101x.tar.xz** will be created.
+    * You can check the file contents with `tar -tf 01_Linux_LFS101x.tar.xz`.
+
+---
+3. To extract (de-compress) a file do:
+    `tar -xvf 01_Linux_LFS101x.tar.xz`
+4. Make sure you de-compress on a different directory, to do that use:
+    `tar -xvf 01_Linux_LFS101x.tar.xz -C <another_directory>`
+
+#### Compress a directory using tar and xz
+![compress](Linux_LFS101X_screenshots/10.15_tarxz.jpg)
+
+#### Decompress a file using tar and xz
+![decompress](Linux_LFS101X_screenshots/10.16_extractedfiles.jpg)
+* You may want to extract the contents of the file on a different location using the **-C** option and indicating the new directory.
+
+### 34.- Disk-to-disk copying (dd)
+1. `dd` is very useful for making copies of raw disk space.
+2. Execute `$ dd if=/dev/sda of=/dev/sdb` to do that.
+3. To make a copy of one disk onto another will delete everything that previously existed on the second disk (sdb)
+4. An exact copy of the first dis device (sda) is created on the second device (sdb).
+
+---
+- End of chapter **ten**.
 
