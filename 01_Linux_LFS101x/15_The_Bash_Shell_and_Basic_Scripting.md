@@ -278,19 +278,19 @@
 5. The function declaration requires a **name** which is used to invoke it.
 6. The proper syntax is:
 
-function_name () {
+    1.      function_name () {
 
-command...
+    2.          command...
 
-}
+    3.      }
 
 7. For example, the following fuction is named **display**:
 
-display () {
+    1.      display () {
     
-echo "This is a sample function that just displays a string"
+    2.          echo "This is a sample function that just displays a string"
 
-}
+    3.      }
 
 8. The function can be as long as desired and have many statements.
 9. Once defined, the function can be called later as many times as necessary.
@@ -377,5 +377,185 @@ Write a script which:
 **Solution**
 Create a file named **testenv.sh**, with the content below:
 
+![testenv1](Linux_LFS101X_screenshots/15.16_testenvsh.jpg)
+***You can see the actual script [here](https://github.com/roberto17orozco/Personal-Cybersecurity-Learning-Method/blob/Main/01_Linux_LFS101x/scripts/13_testenv.sh).***
+
+#### ./testenv.sh output
+![testenv2](Linux_LFS101X_screenshots/15.17_testenvsh2.jpg)
+
+* Notice the elements of this script:
+
+| Element | Explanation |
+|---------|-------------|
+| `#!/bin/bash` | Shebang that indicates the script must be executed with **bash**. |
+| `echo` | Displays instructions or messages to the user. |
+| `read ans` | Reads the user's input and stores it in the **ans** variable. |
+| `RC` | The script’s exit code; it starts at **0**, which represents success. |
+| `if [ "$ans" -eq 1 ] then export EVAR="Yes"` | Main logical condition: if the user enters **1**, it exports `EVAR="Yes"`. |
+| `else export EVAR="Unknown" RC=1 fi fi` | If the user does not enter **1** or **2**, it exports `EVAR="Unknown"` and marks an error. |
+| `RC=1` | Indicates that the user input was invalid. |
+| `exit $RC` | For valid input → `exit 0`; for invalid input → `exit 1`. |
+
+#### This is what happened
+
+The program begins by speaking to the user, asking them to choose between two options, 1 or 2, so it can decide what value to give an environment variable. After saying this, it pauses and waits patiently for the user’s answer. Once the user types something, the program prepares itself by setting a return code of 0, meaning that so far everything seems fine. With that initial assumption in place, it examines the user’s choice: if the answer is 1, it sets the variable EVAR to “Yes”; if the answer is 2, it sets EVAR to “No”. But if the user enters anything else, the program realizes the choice is invalid, assigns EVAR the value “Unknown”, and changes its return code to 1 to signal that something went wrong. When all of this is done, it prints out the final value of EVAR and ends by returning its code, which will be 0 if the input was valid or 1 if it wasn’t.
+
+---
+
+### Lab 15.5: Working with functions
+Write a script which:
+1. Asks the user for a number (1, 2 or 3).
+2. Calls a function with that number in its name. The function should display a message with its name included.
+
+**Solution**
+1. Create afile named **testfun.sh** with the content below:
+
+![testfun](Linux_LFS101X_screenshots/15.18_testfun.jpg)
+***You can see the actual screept [here](https://github.com/roberto17orozco/Personal-Cybersecurity-Learning-Method/blob/Main/01_Linux_LFS101x/scripts/14_testfunc.sh).***
 
 
+#### ./testfun.sh output
+![testfun2](Linux_LFS101X_screenshots/15.19_testfun2.jpg)
+
+* Notice:
+    1. Functions must be **declared** before being **called**.
+    2. User input drives program flow (`echo: enter a number from 1 to 3`).
+    3. `func$n` calls the function choosen by the user, `$` calls any character.
+
+---
+
+### 21.- The if statement
+1. Conditional decision making, using an `if` statement, is a basic construct that any useful programming or scripting language must have.
+2. A general definition is:
+
+
+| Element | Meaning |
+|---------|---------|
+| `if` | Begins a conditional test. |
+| `then` | Contains the statements executed when the condition is true. |
+| `else` | Contains the statements executed when the condition is false. |
+| `fi` | Marks the end of the conditional block. |
+
+### 22.- The elif statement
+1. You can use the `elif` statement to perform more complicated tests and take appropiate actions.
+2. The basic syntax is:
+    1.      if [ sometest ] ; then
+    2.          echo "Passed test1"
+    3.      elif [ someothertest ] ; then
+    4.          echo "Passed test2"
+    5.      fi
+
+### 23.- Testing for files
+1. You can use the if statement to test for file attributes using **conditionals**.
+2. For example:
+    1.      if [ -x /etc/passwd ] ; then
+    2.          ACTION
+    3.      fi
+
+* Note: this example means "If file /etc/passwd is executable then take and action".
+
+#### Conditions and their meanings
+| Condition | Meaning |
+|----------|---------|
+| `-e file` | Checks if the file exists. |
+| `-d file` | True if the file is a directory. |
+| `-f file` | True if the file is a regular file (not a symlink, device, node, or directory). |
+| `-s file` | True if the file exists and is not empty (size > 0). |
+| `-g file` | True if the file has the SGID bit set. |
+| `-u file` | True if the file has the SUID bit set. |
+| `-r file` | True if the file is readable by the current user. |
+| `-w file` | True if the file is writable by the current user. |
+| `-x file` | True if the file is executable by the current user. |
+
+---
+### 24.- Boolean Expressions
+1. They evaluate to either TRUE or FALSE, and results are obtained using the various boolean expressions.
+
+Operator        Operation       Meaning
+`&&`        AND     the action will be performed only if **both** the conditions evaluate to **true**.
+`||`        OR      the action will be performed if **any** of the conditions evaluate to **true**.
+`!`     NOT     the action will be performed only if the condition evaluates to **false**.     
+
+| Operator | Operation | Meaning |
+|----------|-----------|---------|
+| `&&` | AND | The action will be performed only if **both** conditions evaluate to **true**. |
+| (double pipe sign) | OR | The action will be performed if **any** of the conditions evaluates to **true**. |
+| `!` | NOT | The action will be performed only if the condition evaluates to **false**. |
+
+
+### 25.- Testing of strings using ==
+1. You can use the **if statement** to compare strings using the operator `==` (dobule equal signs).
+2. The syntax is as follows:
+    1.      if [ string 1 == string2 ] ; then
+    2.          ACTION
+    3.      fi
+
+3. Ceck for the next file called **flight.sh**
+![flight](Linux_LFS101X_screenshots/15.20_flight.jpg)
+***You can see the actual script [here](https://github.com/roberto17orozco/Personal-Cybersecurity-Learning-Method/blob/Main/01_Linux_LFS101x/scripts/15_flight.sh).***
+
+#### ./flight.sh output
+![flight2](Linux_LFS101X_screenshots/15.21_flight2.jpg).
+* Notice:
+    1. You cannot use the `-eq` on this script because `-eq` only works with numbers.
+    2. `==` is for strings (words).
+
+### 26.- Numerical tests
+1. You can compare numbers with the **if statement** and special operators:
+
+| Operator | Meaning |
+|----------|---------|
+| `-eq` | equal to |
+| `-ne` | not equal to |
+| `-gt` | greater than |
+| `-lt` | less than |
+| `-ge` | greater than or equal to |
+| `-le` | less than or equal to |
+
+
+
+2. Its syntax is:
+
+    `exp1 -op exp2`
+
+### 27.- Arithmetic expressions
+1. Can be evaluatd in the following three ways:
+    1. Expr utility, its syntax is:
+
+
+    `expr 8+8`
+    
+    `echo $(expr 8+8)`
+
+    2. Using the `$((...))` syntax:
+
+    `echo $((x+1))`
+
+    3. Using the built in command `let`
+
+    `let x=( 1 + 2 ) ; echo $x`
+
+### Additional information about scripts
+
+### Elements commonly found in a Bash script
+
+| Script Element | Description | Examples |
+|----------------|-------------|----------|
+| **Control statements** | Structures that control program flow. | `if ... fi`, `for i in *; do ... done`, `case $x in ...)` |
+| **Commands** | Executable system instructions. | `ls`, `echo "Hello"`, `grep "root" /etc/passwd` |
+| **Functions** | Reusable blocks of code. | `myfunc() { echo "Hi"; }`, `backup() { tar -czf ...; }` |
+| **Variables** | Store values. | `x=10`, `name="Roberto"`, `PATH=/usr/bin` |
+| **Expansions** | Substitutions performed by Bash. | `$var`, `$(date)`, `$((2+3))` |
+| **Operators** | Used for comparisons and logic. | `-eq`, `==`, `&&` |
+| **Comments** | Text ignored by the interpreter. | `# This is a comment`, `# Author: Roberto` |
+| **Redirections** | Control input/output streams. | `> out.txt`, `2> error.log`, `< input.txt` |
+| **Pipelines** | Chain commands together. | `ls | grep txt`, `cat file | wc -l` |
+| **Arrays** | Indexed lists of values. | `arr=(a b c)`, `${arr[1]}`, `${arr[@]}` |
+| **Script arguments** | Parameters passed at execution. | `$1`, `$@`, `$#` |
+| **Shebang** | Defines the script interpreter. | `#!/bin/bash`, `#!/usr/bin/env bash` |
+| **Exit codes** | Indicate success or failure. | `exit 0`, `exit 1`, `echo $?` |
+
+
+---
+
+- End of chapter **fifteen.**
