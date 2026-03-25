@@ -125,7 +125,7 @@ Write a script which reads two strings as arguments and then:
 Note you can have multiple possibilities for each **case value** that take the same action.
 
 ![case](Linux_LFS101X_screenshots/16.8_caseconstruct.jpg)
-You can see the actual script [here]
+***You can see the actual script [here](https://github.com/roberto17orozco/Personal-Cybersecurity-Learning-Method/blob/Main/01_Linux_LFS101x/scripts/19_case_statement.sh)***.
 
 #### case_statement.sh output
 
@@ -136,7 +136,7 @@ You can see the actual script [here]
 2. If no argument is given, or a bad number is given, the script should report the error and exit.
 
 ![months](Linux_LFS101X_screenshots/16.10_months.jpg)
-***You can see the actual script [here]***
+***You can see the actual script [here](https://github.com/roberto17orozco/Personal-Cybersecurity-Learning-Method/blob/Main/01_Linux_LFS101x/scripts/20_months.sh).***
 
 **Note:**
 1. First verify if the user passed a parameter with the if statement.
@@ -176,7 +176,8 @@ You can see the actual script [here]
 
 #### for loop example
 ![forloop](Linux_LFS101X_screenshots/16.12_forloop.jpg)
-***You can see the actual script [here]***
+***You can see the actual script [here](https://github.com/roberto17orozco/Personal-Cybersecurity-Learning-Method/blob/Main/01_Linux_LFS101x/scripts/21_for_loop.sh)***
+
 
 **Notes:**
 1. The purpose of the script is to calculate the sum of the numbers from 1 to 10.
@@ -214,7 +215,7 @@ And **j** retains the last processed value (10), which allows the script to veri
 
 #### the while loop
 ![whileloop](Linux_LFS101X_screenshots/16.13_whileloop.jpg)
-***You can see the actual script [here]***.
+***You can see the actual script [here](https://github.com/roberto17orozco/Personal-Cybersecurity-Learning-Method/blob/Main/01_Linux_LFS101x/scripts/22_while_loop.sh)***.
 
 #### ./while_loop.sh output
 ![whileloop2](Linux_LFS101X_screenshots/16.14_whileloop2.jpg)
@@ -344,7 +345,7 @@ Write a script which:
 
 **Solution**
 ![randomlab](Linux_LFS101X_screenshots/16.17_randomlab.jpg)
-***You can see the actual script [here]***.
+***You can see the actual script [here](https://github.com/roberto17orozco/Personal-Cybersecurity-Learning-Method/blob/Main/01_Linux_LFS101x/scripts/23_random_numbers.sh)***.
 
 #### ./random_lab.sh output
 ![randomlab](Linux_LFS101X_screenshots/16.18_randomlab2.jpg)
