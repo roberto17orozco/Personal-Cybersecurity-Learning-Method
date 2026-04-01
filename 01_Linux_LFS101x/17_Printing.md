@@ -218,7 +218,7 @@ Now the printer is ready to work.
 
 ### Lab 17.1: Creating PostScript and PDF from Text Files
 1. Check to see if the `enscript` package has been installed on your system, and if not, install it.
-2. Using `enscript`, convert the text file **dmesg.txt** (which you can generate with `dmesg > dmesg.txt`) to PostScript format and name the result **/tmp/dmesg.ps. As an alternative, you can use any large text file on your system. Make sure you can read the PosctScript file (for example with `evince`) and compare to the original file.
+2. Using `enscript`, convert the text file **dmesg.txt** (which you can generate with `dmesg > dmesg.txt`) to PostScript format and name the result **/tmp/dmesg.ps**. As an alternative, you can use any large text file on your system. Make sure you can read the PosctScript file (for example with `evince`) and compare to the original file.
     * **NOTE**: on some systems, evince may have problems with the PostScript file, but the PDF file you produce from it will be fine for viewing.
 3. Convert the PostScript document to PDF format, using `ps2pdf`. Make sure you can read the resulting PDF file. Does it look identical to the PostScript version?
 4. Is there a way you can go straight to the PDF file without producing a PostScript file on the disk along the way?
@@ -226,15 +226,17 @@ Now the printer is ready to work.
 
 **Solution**
 
-
-
-
+1. Check to see if **enscript** is installed with: `which enscript`.
+2. Convert **dmesg.txt** to **ps**.
+![enscript](Linux_LFS101X_screenshots/17.1_enscript.jpg)
+3. Convert the PostScript document to PDF format:
+![ps2pdf](Linux_LFS101X_screenshots/17.2_ps2pdf.jpg)
+4. See the pdf file with `evince`:
+![evince](Linux_LFS101X_screenshots/17.3_evince.jpg)
+5. Convert a text file to pdf directly without converting the text file to ps:
+![pdfdirect](Linux_LFS101X_screenshots/17.4_directpdf.jpg)
+6. pdf info
+![pdfinfo](Linux_LFS101X_screenshots/17.5_pdfinfo.jpg)
 
 ---
-### Lab 17.2: Combining PDF's
-1. You can convert two text files (you can create them or use ones that already exist since this is non-destructive) into PDF's, or you can use two pre-existing ones. Combine them into one PDF, and view the result. Do this using three different methods:
-    1. qpdf
-    2. qdftk
-    3. gs
-
-2. If `pdftk` is not installed, you can try to install. However, if you are on a system for which it is no longer available, you will have to use `qpdf` or `gs`.
+- End of chapter **seventeen**.
