@@ -1,0 +1,5 @@
+Failed password
+Invalid user
+authentication failure
+pam_unix
+incorrect password
