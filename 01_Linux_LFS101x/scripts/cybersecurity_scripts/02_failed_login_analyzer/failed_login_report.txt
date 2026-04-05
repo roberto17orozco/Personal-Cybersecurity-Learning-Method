@@ -1,11 +1,8 @@
-===== Failed Login Attempt Analyzer - Fri Apr  3 07:24:44 PM MST 2026 =====
+===== Failed Login Attempt Analyzer - Sat Apr  4 04:15:07 PM MST 2026 =====
 
 [INFO] Searching for suspicious authentication events...
 
 === Matching log entries ===
-Feb 10 03:27:00 kali xfce4-screensaver-dialog[97850]: pam_unix(xfce4-screensaver:auth): conversation failed
-Feb 10 03:27:00 kali xfce4-screensaver-dialog[97850]: pam_unix(xfce4-screensaver:auth): auth could not identify password for [robert]
-Feb 10 17:02:59 kali xfce4-screensaver-dialog[99627]: pam_unix(xfce4-screensaver:account): setuid failed: Operation not permitted
 Feb 10 18:35:01 kali CRON[134172]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
 Feb 10 18:35:01 kali CRON[134172]: pam_unix(cron:session): session closed for user root
 Feb 10 18:39:01 kali CRON[136102]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
@@ -18,19 +15,10 @@ Feb 10 19:05:01 kali CRON[148857]: pam_unix(cron:session): session opened for us
 Feb 10 19:05:01 kali CRON[148857]: pam_unix(cron:session): session closed for user root
 Feb 10 19:09:01 kali CRON[150788]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
 Feb 10 19:09:01 kali CRON[150788]: pam_unix(cron:session): session closed for user root
-Feb 10 19:11:47 kali sudo[152187]: pam_unix(sudo:auth): authentication failure; logname=robert uid=1000 euid=0 tty=/dev/pts/0 ruser=robert rhost=  user=robert
-Feb 10 19:11:56 kali sudo[152187]: pam_unix(sudo:session): session opened for user root(uid=0) by robert(uid=1000)
-Feb 10 19:11:56 kali sudo[152187]: pam_unix(sudo:session): session closed for user root
 Feb 10 19:15:01 kali CRON[153794]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
 Feb 10 19:15:01 kali CRON[153794]: pam_unix(cron:session): session closed for user root
 Feb 10 19:17:01 kali CRON[154766]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
 Feb 10 19:17:01 kali CRON[154766]: pam_unix(cron:session): session closed for user root
-Feb 10 19:19:05 kali sudo[155787]: pam_unix(sudo:session): session opened for user root(uid=0) by robert(uid=1000)
-Feb 10 19:19:05 kali sudo[155787]: pam_unix(sudo:session): session closed for user root
-Feb 10 19:19:24 kali sudo[155964]: pam_unix(sudo:session): session opened for user root(uid=0) by robert(uid=1000)
-Feb 10 19:19:24 kali sudo[155964]: pam_unix(sudo:session): session closed for user root
-Feb 10 19:24:35 kali sudo[158538]: pam_unix(sudo:session): session opened for user root(uid=0) by robert(uid=1000)
-Feb 10 19:24:35 kali sudo[158538]: pam_unix(sudo:session): session closed for user root
 Feb 10 19:25:01 kali CRON[158767]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
 Feb 10 19:25:01 kali CRON[158767]: pam_unix(cron:session): session closed for user root
 Feb 10 19:35:01 kali CRON[163588]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
@@ -4644,8 +4632,34 @@ Apr 03 19:23:00 kali sudo[102338]: pam_unix(sudo:session): session closed for us
 Apr 03 19:23:00 kali sudo[102373]: pam_unix(sudo:session): session opened for user root(uid=0) by robert(uid=1000)
 Apr 03 19:23:02 kali sudo[102373]: pam_unix(sudo:session): session closed for user root
 Apr 03 19:24:44 kali sudo[103340]: pam_unix(sudo:session): session opened for user root(uid=0) by robert(uid=1000)
+Apr 03 19:24:46 kali sudo[103340]: pam_unix(sudo:session): session closed for user root
+Apr 03 19:24:46 kali sudo[103371]: pam_unix(sudo:session): session opened for user root(uid=0) by robert(uid=1000)
+Apr 03 19:24:48 kali sudo[103371]: pam_unix(sudo:session): session closed for user root
+Apr 03 19:25:01 kali CRON[103504]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Apr 03 19:25:01 kali CRON[103504]: pam_unix(cron:session): session closed for user root
+Apr 03 19:35:01 kali CRON[109336]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Apr 03 19:35:01 kali CRON[109336]: pam_unix(cron:session): session closed for user root
+Apr 03 19:39:01 kali CRON[111293]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Apr 03 19:39:01 kali CRON[111293]: pam_unix(cron:session): session closed for user root
+Apr 03 19:45:01 kali CRON[115046]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Apr 03 19:45:01 kali CRON[115046]: pam_unix(cron:session): session closed for user root
+Apr 04 16:05:01 kali CRON[121433]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Apr 04 16:05:01 kali CRON[121433]: pam_unix(cron:session): session closed for user root
+Apr 04 16:09:01 kali CRON[876]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Apr 04 16:09:01 kali CRON[876]: pam_unix(cron:session): session closed for user root
+Apr 04 16:09:09 kali lightdm[1005]: pam_unix(lightdm-greeter:session): session opened for user lightdm(uid=111) by (uid=0)
+Apr 04 16:09:10 kali (systemd)[1020]: pam_unix(systemd-user:session): session opened for user lightdm(uid=111) by lightdm(uid=0)
+Apr 04 16:09:10 kali lightdm[1005]: pam_unix(lightdm-greeter:session): session opened for user lightdm(uid=111) by (uid=0)
+Apr 04 16:09:36 kali lightdm[1005]: pam_unix(lightdm-greeter:session): session closed for user lightdm
+Apr 04 16:09:36 kali lightdm[1005]: pam_unix(lightdm-greeter:session): session closed for user lightdm
+Apr 04 16:09:36 kali lightdm[1202]: pam_unix(lightdm:session): session opened for user robert(uid=1000) by robert(uid=0)
+Apr 04 16:09:36 kali (systemd)[1247]: pam_unix(systemd-user:session): session opened for user robert(uid=1000) by robert(uid=0)
+Apr 04 16:09:46 kali (sd-pam)[1023]: pam_unix(systemd-user:session): session closed for user lightdm
+Apr 04 16:15:01 kali CRON[5371]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)
+Apr 04 16:15:01 kali CRON[5371]: pam_unix(cron:session): session closed for user root
+Apr 04 16:15:12 kali sudo[5452]: pam_unix(sudo:session): session opened for user root(uid=0) by robert(uid=1000)
 
 === Summary ===
-[INFO] Total suspicious entries found: 4643
+[INFO] Total suspicious entries found: 4657
 
 [DONE] Analysis completed. Report saved to failed_login_report.txt
