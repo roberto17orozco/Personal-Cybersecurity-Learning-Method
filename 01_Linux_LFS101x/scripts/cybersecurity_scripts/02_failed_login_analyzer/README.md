@@ -174,6 +174,7 @@ Create the file **failed_login_analyzer.sh**
 
 #### failed_login_report.txt
 ![report](20.3_failedloginreport.jpg)
+* Note: go to end of README.md file to learn how to read the report.
 
 
 
@@ -191,6 +192,126 @@ Create the file **failed_login_analyzer.sh**
 1. As mentioned before, all logs are managed by **systemd-journald** and are not saved into a specific text file.
 2. Therefore you can type `sudo journalctl | grep -Ei "failed|invalid|auth|password"` to manually verify the failed events recently made.
 
+---
+
+### How to read the report in failed_login_report.txt
+
+1. The string `pam_unix` in the file suspicious_patterns.txt makes the script retrieve wanted and unwanted events; that is the reason why the report includes legit events.
+    1. PAM (Pluggable Authentication Modules) is the central authentication system in Linux.
+    2. All of the following actions pass through PAM:
+        * session login
+        * password verification
+        * opening sessions
+        * closing sessions
+        * sudo
+        * cron
+        * ssh
+        * system services
+    3. `pam_unix` is one of the PAM modules. It manages:
+        * traditional passwords
+        * verification in /etc/passwd and /etc/shadow
+        * opening and closing sessions
+        * basic service authentication
+
+2. Explanation about some of the lines:
+    1. `cron` event in the line:
+    
+    * `Mar 08 21:05:01 kali CRON[66810]: pam_unix(cron:session): session opened for user root(uid=0) by root(uid=0)`
+        * `date`
+        * `kali`: name of the system where the event occurred
+        * `CRON[66810]`: process that generated the log
+            * `cron` is a system service that executes scheduled tasks automatically.
+                * It executes scheduled commands and scripts.
+                * It is used to automate system maintenance: automatic backups, log rotation, temporary files cleanup, etc.
+        * `pam_unix(cron:session):` PAM module that generated the message
+        * `session opened for user root(uid=0) by root(uid=0)`: means that:
+            * a session was opened
+            * for the **root** user
+            * UID 0 = root
+            * opened by root
+            * through **cron**
+    
+    * This is a scheduled task executed by **cron** that requires root permissions.
+    * It is not a failed authentication attempt.
+
+    3. Wrong user authentication.
+        * All of the following lines constitute a single event:
+            1. Apr 02 19:15:04 kali login[61788]: pam_unix(login:auth): check pass; user unknown
+            2. Apr 02 19:15:04 kali login[61788]: pam_unix(login:auth): authentication failure; logname= uid=0 euid=0 tty=/dev/tty2 ruser= rhost=
+            3. Apr 02 19:15:04 kali login[61788]: pam_winbind(login:auth): getting password (0x00000388)
+            4. Apr 02 19:15:04 kali login[61788]: pam_winbind(login:auth): pam_get_item returned a password
+            5. Apr 02 19:15:07 kali login[61788]: FAILED LOGIN 1 FROM tty2 FOR perlaibarra, Authentication failure
+        * We know that because:
+            1. They all have the same date
+            2. Almost the same time
+            3. Most importantly, the **same process id (PID)** which is 61788
+            4. The same TTY: /dev/tty2 (TTY is a virtual console)
+
+        * What is going on in every line:
+            1. `pam_unix(login:auth): check pass; user unknown`: PAM checks the password, but the user doesn't exist.
+            2. `pam_unix(login:auth): authentication failure`: PAM confirms authentication failure.
+            3. `pam_winbind(login:auth): getting password`: winbind tries to authenticate against a domain.
+            4. `pam_winbind(login:auth): pam_get_item returned a password`: winbind receives the password.
+            5. `FAILED LOGIN 1 FROM tty2 FOR perlaibarra, Authentication failure`: this is the clearest line of the event. It shows the username that tried to log in, the origin (tty2), and the result: **Authentication failure**.
+
+    3. Wrong password for `sudo`
+        * Again, all of the lines constitute a single event:
+            1. Apr 02 19:19:23 kali sudo[2602]: pam_unix(sudo:auth): authentication failure; logname=robert uid=1000 euid=0 tty=/dev/pts/0 ruser=robert rhost=  user=robert
+            2. Apr 02 19:19:35 kali sudo[2602]: pam_unix(sudo:auth): conversation failed
+            3. Apr 02 19:19:35 kali sudo[2602]: pam_unix(sudo:auth): auth could not identify password for [robert]
+            4. Apr 02 19:19:35 kali sudo[2602]:   robert : 2 incorrect password attempts ; TTY=pts/0 ; PWD=/home/robert ; USER=root ; COMMAND=/usr/bin/ls
+        * We know that because:
+            1. They show the same process id (PID): 2602.
+            2. They show the same TTY (/dev/pts/0 which means a graphical terminal).
+        * What is going on in every line:
+            1. `pam_unix(sudo:auth): authentication failure; logname=robert uid=1000 euid=0 tty=/dev/pts/0 ruser=robert rhost=  user=robert`:
+                * PAM detected an authentication failure in `sudo`.
+                * `logname=robert`: user that initiated the session.
+                * `euid=0`: sudo tries to elevate to root privileges.
+                * `tty=/dev/pts/0`: graphical terminal (GNOME).
+                * `user=robert`: user that entered the password.
+            2. `pam_unix(sudo:auth): conversation failed`:
+                * PAM tried to interact with the user (prompts a password).
+                * Interaction failed.
+                * This normally happens after several attempts.
+            3. `pam_unix(sudo:auth): auth could not identify password for [robert]`:
+                * PAM received a wrong password.
+                * Password does not match the one stored in **/etc/shadow**.
+            4. `robert : 2 incorrect password attempts ; TTY=pts/0 ; PWD=/home/robert ; USER=root ; COMMAND=/usr/bin/ls`
+                * Final result, the event summary.
+                * user: robert
+                * number of attempts: 2
+                * terminal: pts/0 (graphical terminal)
+                * actual directory (PWD): /home/robert
+                * command that was trying to be executed: `sudo ls`
+                * target user: root
+
+
+---
+#### Additional Information
+
+1. If you only want to query authentication events in the whole system (not scheduled processes like `cron`, `systemd timers`, `logrotate`, `updatedb`, `NetworkManager`, etc.), type:
+
+    `sudo journalctl -t sshd -t sudo -t login -t systemd-logind`
+
+    * Here you will see either **successful** or **failed** authentication attempts for: logins, sudo, opening and closing sessions, SSH logins, TTY logins, and graphical authentication.
+    * The `-t` option (identifier/tag) is used to indicate a specific service. In this command: sshd, sudo, login, and systemd-logind.
+    * If you want to see authentication events for a single service, just remove the others from the command.
+
+2. If you only want to query **failed** authentication events in the whole system (not scheduled processes like `cron`, `systemd timers`, `logrotate`, `updatedb`, `NetworkManager`, etc.), type:
+
+    `sudo journalctl | grep -Ei "failed password|authentication failure|invalid user|incorrect password"`
+
+    * The pattern `"failed password|authentication failure|invalid user|incorrect password"` covers practically 100% of real authentication failures.
+    * **Notice:**
+        * You are running `journalctl` with no options, and then piping the output to `grep` with the pattern string.
+        * `-Ei "<pattern>"`:
+            * `-E`: activates ERE mode (Extended Regular Expressions), which allows the use of more advanced patterns without escaping many characters. Works for `|`, `+`, `?`, and `()`.
+            * `-i`: ignores case sensitivity, so grep won’t distinguish between "Failed" and "FAILED".
+
+
+
+    
 
 ---
 End of project **two**.
