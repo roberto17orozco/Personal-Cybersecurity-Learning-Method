@@ -288,7 +288,7 @@ Create the file **failed_login_analyzer.sh**
 
 
 ---
-#### Additional Information
+### Additional Information
 
 1. If you only want to query authentication events in the whole system (not scheduled processes like `cron`, `systemd timers`, `logrotate`, `updatedb`, `NetworkManager`, etc.), type:
 
@@ -297,6 +297,10 @@ Create the file **failed_login_analyzer.sh**
     * Here you will see either **successful** or **failed** authentication attempts for: logins, sudo, opening and closing sessions, SSH logins, TTY logins, and graphical authentication.
     * The `-t` option (identifier/tag) is used to indicate a specific service. In this command: sshd, sudo, login, and systemd-logind.
     * If you want to see authentication events for a single service, just remove the others from the command.
+
+#### Filtering authentication logs
+![filterlogs](20.4_filteringlogs.png)
+
 
 2. If you only want to query **failed** authentication events in the whole system (not scheduled processes like `cron`, `systemd timers`, `logrotate`, `updatedb`, `NetworkManager`, etc.), type:
 
