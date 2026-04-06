@@ -292,7 +292,7 @@ Create the file **failed_login_analyzer.sh**
 
 1. If you only want to query authentication events in the whole system (not scheduled processes like `cron`, `systemd timers`, `logrotate`, `updatedb`, `NetworkManager`, etc.), type:
 
-    `sudo journalctl -t sshd -t sudo -t login -t systemd-logind`
+    `sudo journalctl -u ssh -t sudo -t login -t systemd-logind`
 
     * Here you will see either **successful** or **failed** authentication attempts for: logins, sudo, opening and closing sessions, SSH logins, TTY logins, and graphical authentication.
     * The `-t` option (identifier/tag) is used to indicate a specific service. In this command: sshd, sudo, login, and systemd-logind.
