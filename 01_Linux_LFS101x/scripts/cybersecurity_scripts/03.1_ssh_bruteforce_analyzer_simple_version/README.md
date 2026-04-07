@@ -11,6 +11,9 @@
     * contain timestamps
     * detect advanced patterns
 
+        * To learn about importance of SSH in current networking read file [README_SSH.md](https://github.com/roberto17orozco/Personal-Cybersecurity-Learning-Method/blob/Main/01_Linux_LFS101x/scripts/cybersecurity_scripts/03.1_ssh_bruteforce_analyzer_simple_version/README_SSH.md)
+        
+
 ### 2.- Create a directory for the project
 
 `/03.1_ssh_bruteforce_analyzer_simple_version`
@@ -154,6 +157,14 @@ If conditional test is **FALSE** (user has sudo privileges) it will proceed with
 ### 5.- Run it with sudo
 
 ### 6.- Check the generated files
+
+#### SSH Brute Force Analysis Workflow
+
+![sshdiagram](21.6_sshdiagram.png)
+
+
+
+
 
 ---
 - End of project **three**.
