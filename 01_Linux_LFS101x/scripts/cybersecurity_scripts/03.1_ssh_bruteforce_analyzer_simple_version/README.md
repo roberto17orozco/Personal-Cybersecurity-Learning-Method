@@ -95,7 +95,7 @@ If conditional test is **FALSE** (user has sudo privileges) it will proceed with
             * **ip_attempts.txt** is fundamental because it contains number of failed attempts per IP, it is the input for the "Calculate severity" step, it reveals which IPs generated the most failed login attempts.
 
 #### ip_attempts.txt
-[ipattempts](21.3_ipattempts.jpg)
+![ipattempts](21.3_ipattempts.jpg)
 
 6. Extract users
     1. `awk '{for(i=1;i<=NF;i++) if($i=="for") print $(i+1)}' failed_events.txt > detected_users.txt`
