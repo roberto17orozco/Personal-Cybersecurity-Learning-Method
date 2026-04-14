@@ -1,0 +1,17 @@
+Apr 02 19:02:10 kali sshd-session[55131]: Invalid user wronguser from 127.0.0.1 port 47272
+Apr 02 19:05:02 kali sshd-session[56706]: Invalid user wronguser from 127.0.0.1 port 51352
+Apr 02 19:05:15 kali sshd-session[56706]: Failed password for invalid user wronguser from 127.0.0.1 port 51352 ssh2
+Apr 02 19:05:22 kali sshd-session[56706]: Failed password for invalid user wronguser from 127.0.0.1 port 51352 ssh2
+Apr 02 19:05:30 kali sshd-session[56706]: Failed password for invalid user wronguser from 127.0.0.1 port 51352 ssh2
+Apr 02 19:13:34 kali sshd-session[61213]: Invalid user roberton from 127.0.0.1 port 34064
+Apr 02 19:13:42 kali sshd-session[61213]: Failed password for invalid user roberton from 127.0.0.1 port 34064 ssh2
+Apr 02 19:13:58 kali sshd-session[61438]: Invalid user kali from 127.0.0.1 port 58794
+Apr 02 19:14:18 kali sshd-session[61438]: Failed password for invalid user kali from 127.0.0.1 port 58794 ssh2
+Apr 05 18:39:01 kali sshd-session[67231]: Failed password for robert from 127.0.0.1 port 59056 ssh2
+Apr 05 18:39:17 kali sshd-session[67231]: Failed password for robert from 127.0.0.1 port 59056 ssh2
+Apr 05 18:40:36 kali sshd-session[68183]: Invalid user fakeuser from 127.0.0.1 port 51998
+Apr 05 18:40:52 kali sshd-session[68183]: Failed password for invalid user fakeuser from 127.0.0.1 port 51998 ssh2
+Apr 05 18:41:24 kali sshd-session[68665]: Invalid user perlagarcia from 127.0.0.1 port 52932
+Apr 05 18:41:30 kali sshd-session[68665]: Failed password for invalid user perlagarcia from 127.0.0.1 port 52932 ssh2
+Apr 05 18:50:51 kali sshd-session[73676]: Invalid user fakeuser22 from 127.0.0.1 port 58568
+Apr 05 18:50:57 kali sshd-session[73676]: Failed password for invalid user fakeuser22 from 127.0.0.1 port 58568 ssh2
