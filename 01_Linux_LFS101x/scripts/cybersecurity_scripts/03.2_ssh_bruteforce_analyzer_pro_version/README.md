@@ -24,7 +24,8 @@
 
 ### 1. Create project directory
 
-**/03.2_ssh_bruteforce_analyzer_pro_version**
+
+* **03.2_ssh_bruteforce_analyzer_pro_version**
 ---
 ### 2. Create script
 
