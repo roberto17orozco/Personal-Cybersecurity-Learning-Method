@@ -3,9 +3,10 @@ After acomplishing the Linux LFS101x course I decided to work on 7 cybersecurity
 
 In this directory you will find my first 10 cybersecurity scripts. They are all created with Copilot help.
 
+I'm working mostly in Kali Linux in a Virtual Machine in my Laptop, I'm not managing networks, don't have remote access to other 
 
 
-The scripts will find in this directory are:
+The scripts you will find in this directory are:
 
 | #  | Project Name                         | What You Learn (English)                                                                 | Complexity | Target Role                         |
 |----|---------------------------------------|-------------------------------------------------------------------------------------------|------------|--------------------------------------|
