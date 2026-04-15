@@ -33,18 +33,13 @@
 
 * Script Header
 
-#!/bin/bash\
+#!/usr/bin/env bash
 ############################################\
 \# SSH BRUTE FORCE ANALYZER (PRO VERSION)\
 \# Author: Roberto Orozco (2026)\
 ############################################
 
-* For this projct `#!/bin/bash` is used instead of `#!/usr/bin/env bash` because:
-    1. In modern distros **bash** is always on /bin/bash.
-    2. **/usr/bin/env bash** is used for portable purposes, like when the script is going to be ran in macOS, BSD, NixOS, or in minimalist containers.
-    3. It is faster, it doen't use $PATH to find bash
-    
-  
+
 
 #### 1.- COLORS
 Define colors for variables RED, YELLOW, GREEN and BLUE
