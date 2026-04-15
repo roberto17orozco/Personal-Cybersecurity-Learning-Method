@@ -1,44 +1,3 @@
-Feb 16 21:20:43 kali systemd[1]: Starting ssh.service - OpenBSD Secure Shell server...
-Feb 16 21:20:43 kali sshd[181837]: Server listening on 0.0.0.0 port 22.
-Feb 16 21:20:43 kali sshd[181837]: Server listening on :: port 22.
-Feb 16 21:20:43 kali systemd[1]: Started ssh.service - OpenBSD Secure Shell server.
-Feb 16 21:21:54 kali sshd-session[182351]: Accepted password for robert from 172.16.18.119 port 44248 ssh2
-Feb 16 21:21:54 kali sshd-session[182351]: pam_unix(sshd:session): session opened for user robert(uid=1000) by robert(uid=0)
-Feb 16 21:47:50 kali systemd[1]: Stopping ssh.service - OpenBSD Secure Shell server...
-Feb 16 21:47:50 kali systemd[1]: ssh.service: Deactivated successfully.
-Feb 16 21:47:50 kali systemd[1]: Stopped ssh.service - OpenBSD Secure Shell server.
--- Boot d06a36542c8a420d96c65a0908442c69 --
-Feb 18 15:39:12 kali systemd[1]: Starting ssh.service - OpenBSD Secure Shell server...
-Feb 18 15:39:13 kali sshd[901]: Server listening on 0.0.0.0 port 22.
-Feb 18 15:39:13 kali systemd[1]: Started ssh.service - OpenBSD Secure Shell server.
-Feb 18 15:39:13 kali sshd[901]: Server listening on :: port 22.
-Feb 18 17:13:10 kali systemd[1]: Stopping ssh.service - OpenBSD Secure Shell server...
-Feb 18 17:13:11 kali sshd[901]: Received signal 15; terminating.
-Feb 18 17:13:11 kali systemd[1]: ssh.service: Deactivated successfully.
-Feb 18 17:13:11 kali systemd[1]: Stopped ssh.service - OpenBSD Secure Shell server.
--- Boot 937bd4277a814c839fd6f851bf9aa24c --
-Feb 18 17:14:10 kali systemd[1]: Starting ssh.service - OpenBSD Secure Shell server...
-Feb 18 17:14:10 kali sshd[838]: Server listening on 0.0.0.0 port 22.
-Feb 18 17:14:10 kali sshd[838]: Server listening on :: port 22.
-Feb 18 17:14:10 kali systemd[1]: Started ssh.service - OpenBSD Secure Shell server.
-Feb 19 20:37:03 kali systemd[1]: Stopping ssh.service - OpenBSD Secure Shell server...
-Feb 19 20:37:03 kali sshd[838]: Received signal 15; terminating.
-Feb 19 20:37:03 kali systemd[1]: ssh.service: Deactivated successfully.
-Feb 19 20:37:03 kali systemd[1]: Stopped ssh.service - OpenBSD Secure Shell server.
--- Boot 2ab2357a5a8e4244b6a3ebc0b4a3cf3c --
-Feb 20 18:11:32 kali systemd[1]: Starting ssh.service - OpenBSD Secure Shell server...
-Feb 20 18:11:32 kali sshd[900]: Server listening on 0.0.0.0 port 22.
-Feb 20 18:11:32 kali sshd[900]: Server listening on :: port 22.
-Feb 20 18:11:32 kali systemd[1]: Started ssh.service - OpenBSD Secure Shell server.
-Feb 20 21:58:17 kali sshd[900]: Received signal 15; terminating.
-Feb 20 21:58:17 kali systemd[1]: Stopping ssh.service - OpenBSD Secure Shell server...
-Feb 20 21:58:17 kali systemd[1]: ssh.service: Deactivated successfully.
-Feb 20 21:58:17 kali systemd[1]: Stopped ssh.service - OpenBSD Secure Shell server.
--- Boot a64792a83a5c4291b8e519443f326dd4 --
-Feb 22 16:17:48 kali systemd[1]: Starting ssh.service - OpenBSD Secure Shell server...
-Feb 22 16:17:48 kali sshd[899]: Server listening on 0.0.0.0 port 22.
-Feb 22 16:17:48 kali sshd[899]: Server listening on :: port 22.
-Feb 22 16:17:48 kali systemd[1]: Started ssh.service - OpenBSD Secure Shell server.
 Feb 22 21:20:35 kali systemd[1]: Stopping ssh.service - OpenBSD Secure Shell server...
 Feb 22 21:20:35 kali sshd[899]: Received signal 15; terminating.
 Feb 22 21:20:35 kali systemd[1]: ssh.service: Deactivated successfully.
@@ -803,3 +762,48 @@ Apr 08 15:51:33 kali systemd[1]: Starting ssh.service - OpenBSD Secure Shell ser
 Apr 08 15:51:33 kali sshd[907]: Server listening on 0.0.0.0 port 22.
 Apr 08 15:51:33 kali sshd[907]: Server listening on :: port 22.
 Apr 08 15:51:33 kali systemd[1]: Started ssh.service - OpenBSD Secure Shell server.
+Apr 08 18:13:26 kali sshd[907]: Received signal 15; terminating.
+Apr 08 18:13:26 kali systemd[1]: Stopping ssh.service - OpenBSD Secure Shell server...
+Apr 08 18:13:26 kali systemd[1]: ssh.service: Deactivated successfully.
+Apr 08 18:13:26 kali systemd[1]: Stopped ssh.service - OpenBSD Secure Shell server.
+-- Boot 0f5e55168f364b96b639cf5de78595a8 --
+Apr 08 18:28:48 kali systemd[1]: Starting ssh.service - OpenBSD Secure Shell server...
+Apr 08 18:28:48 kali sshd[820]: Server listening on 0.0.0.0 port 22.
+Apr 08 18:28:48 kali sshd[820]: Server listening on :: port 22.
+Apr 08 18:28:48 kali systemd[1]: Started ssh.service - OpenBSD Secure Shell server.
+Apr 08 20:19:42 kali systemd[1]: Stopping ssh.service - OpenBSD Secure Shell server...
+Apr 08 20:19:42 kali sshd[820]: Received signal 15; terminating.
+Apr 08 20:19:42 kali systemd[1]: ssh.service: Deactivated successfully.
+Apr 08 20:19:42 kali systemd[1]: Stopped ssh.service - OpenBSD Secure Shell server.
+-- Boot d8adb6877bdb41f8a5345fc9c4058b80 --
+Apr 09 15:40:56 kali systemd[1]: Starting ssh.service - OpenBSD Secure Shell server...
+Apr 09 15:40:56 kali sshd[867]: Server listening on 0.0.0.0 port 22.
+Apr 09 15:40:56 kali sshd[867]: Server listening on :: port 22.
+Apr 09 15:40:56 kali systemd[1]: Started ssh.service - OpenBSD Secure Shell server.
+Apr 09 20:28:44 kali systemd[1]: Stopping ssh.service - OpenBSD Secure Shell server...
+Apr 09 20:28:44 kali sshd[867]: Received signal 15; terminating.
+Apr 09 20:28:44 kali systemd[1]: ssh.service: Deactivated successfully.
+Apr 09 20:28:44 kali systemd[1]: Stopped ssh.service - OpenBSD Secure Shell server.
+-- Boot bed116bc91eb4caf931ba6628358cf3d --
+Apr 13 15:53:36 kali systemd[1]: Starting ssh.service - OpenBSD Secure Shell server...
+Apr 13 15:53:37 kali sshd[883]: Server listening on 0.0.0.0 port 22.
+Apr 13 15:53:37 kali sshd[883]: Server listening on :: port 22.
+Apr 13 15:53:37 kali systemd[1]: Started ssh.service - OpenBSD Secure Shell server.
+Apr 13 20:42:10 kali sshd[883]: Received signal 15; terminating.
+Apr 13 20:42:10 kali systemd[1]: Stopping ssh.service - OpenBSD Secure Shell server...
+Apr 13 20:42:10 kali systemd[1]: ssh.service: Deactivated successfully.
+Apr 13 20:42:10 kali systemd[1]: Stopped ssh.service - OpenBSD Secure Shell server.
+-- Boot 0069f8a878994f398431e8887e19cc2d --
+Apr 14 14:30:09 kali systemd[1]: Starting ssh.service - OpenBSD Secure Shell server...
+Apr 14 14:30:09 kali sshd[869]: Server listening on 0.0.0.0 port 22.
+Apr 14 14:30:09 kali sshd[869]: Server listening on :: port 22.
+Apr 14 14:30:09 kali systemd[1]: Started ssh.service - OpenBSD Secure Shell server.
+Apr 14 17:06:25 kali sshd[869]: Received signal 15; terminating.
+Apr 14 17:06:25 kali systemd[1]: Stopping ssh.service - OpenBSD Secure Shell server...
+Apr 14 17:06:25 kali systemd[1]: ssh.service: Deactivated successfully.
+Apr 14 17:06:25 kali systemd[1]: Stopped ssh.service - OpenBSD Secure Shell server.
+-- Boot 307e70e748294cb6b6175e0fc5aa3133 --
+Apr 15 13:11:06 kali systemd[1]: Starting ssh.service - OpenBSD Secure Shell server...
+Apr 15 13:11:07 kali sshd[884]: Server listening on 0.0.0.0 port 22.
+Apr 15 13:11:07 kali sshd[884]: Server listening on :: port 22.
+Apr 15 13:11:07 kali systemd[1]: Started ssh.service - OpenBSD Secure Shell server.
