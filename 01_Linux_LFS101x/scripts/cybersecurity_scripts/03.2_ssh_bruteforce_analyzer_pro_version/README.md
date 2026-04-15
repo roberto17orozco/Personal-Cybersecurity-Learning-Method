@@ -1,4 +1,6 @@
 ## SSH BRUTE FORCE ANALYZER (PRO VERSION)
+![scriptrunning](22.3_script_running.jpg)
+
 
 1. This pro version of a SSH brute force analyzer constitutes the tool used by SOC analysts, sysadmins and pentesters.
 2. Simple vs PRO Version - Feature Comparison:
@@ -23,7 +25,7 @@
 ### 1. Create project directory
 
 **/03.2_ssh_bruteforce_analyzer_pro_version**
-
+---
 ### 2. Create script
 
 `vim ssh_bruteforce_analyzer_pro_version.sh`
@@ -270,6 +272,10 @@ In this step the script collects and analyzes the SSH logs. Depending on wether 
 11. `fi`: closes conditional test 1.
 12. `}`: closes `collect_logs () {` function.
 
+#### ssh_logs.txt
+![sshlogs](22.4_sshlogs.jpg)
+
+
 #### 8.- FILTER EVENTS
 In this section, the script filters the **relevant events** in **ssh_logs.txt**.
 
@@ -282,6 +288,9 @@ The purpose of th function is to keep only the lines that indicate failed SSH au
     * What is inside the `""` is what `grep` will search in the file.
         * That string contains typical signs of brute-force attacks, automated bots, and unauthorized access attempts.
     * `> failed_events.txt`: redirects the output to this file.
+
+#### failed_events.txt
+![failedevents](22.5_failedevents.jpg)
 
 
 #### 9.- EXTRACT IPS
@@ -319,7 +328,8 @@ Again, this is done with a function.
     5. `failed_events.txt`: is where `awk` will do its job.
     6. `> detected_ips.txt` passes the output to the file **detected_ips.txt**.
 
-
+#### detected_ips.txt
+![detectedips](22.6_detectedips.jpg)
 
 
 
@@ -339,6 +349,8 @@ Again, this is done with a function.
         * `-c`: adds a counter at the beginning of each line.
             * `> ip_attempts.txt`: redirects the result to the file **ip_attempts.txt**
 
+#### ipattempts.txt
+![detectedips](22.7_ipattempts.jpg)
 
 
 #### 11.- GEOLOOKUP
@@ -385,7 +397,7 @@ Again, this is done with a function.
     3. Only takes a single IP and returns a country.
     4. In a later section of this script, the file **detected_ips.txt** will be processed each IP will be geolocated.
 
-
+![geo](22.1_geovariable.jpg)
 
 
 
@@ -443,6 +455,8 @@ This is one of the most important sections in the script because it combines: at
     7. `done < ip_attempts.txt`: ends the loop indicating **ip_attempts.txt** as the input file to process the loop.
     8. `}` closes the function.
 
+#### severity_report.txt
+![severity](22.8_severityreport.jpg)
             
 
 
@@ -459,6 +473,8 @@ The content of the file **severity_report.txt** is the most important to be pass
         * Remember that the `-e` option allows `echo` to interpret special characters, in this case the ansi code for color green and then reset to normal.
 5. `}`: closes the function.
 
+#### final_report_pro.txt
+![finalreport](22.11_finalreport.jpg)
 
 
 #### 14.- EXPORT CSV
@@ -487,6 +503,8 @@ This section exports the content of the file **severity_report.txt** to the vari
     5. `fi`: ends conditional test.
 4. `}`: ends function.
 
+#### csvoutput.csv
+![csvoutput](22.9_csvoutput.jpg)
 
 
 #### 15.- EXPORT JSON
@@ -562,12 +580,8 @@ JSON is a standard, universal format understood by: Python, JavaScript, SIEMs, A
 4. `fi` closes conditional test.
 5. `}` closes the function.
 
-
-
-
-
-
-
+#### jsonoutput.json
+![jsonoutput](22.10_jsonoutput.jpg)
 
 
 #### 16.- MAIN
@@ -598,6 +612,12 @@ The `main ()` function is the **central controller** of the entire script. It de
             1. In the terminal type `bash -c 'source scriptname.sh; calculate_severity'`.
                 * This will execute only the `calculate_severity` function.
         * Eases reading and comprehension for other people.
+
+---
+
+### 3.- Make the Script Executable
+
+### 4.- Check created files
 
 ---
 End of project **three, pro version**.
