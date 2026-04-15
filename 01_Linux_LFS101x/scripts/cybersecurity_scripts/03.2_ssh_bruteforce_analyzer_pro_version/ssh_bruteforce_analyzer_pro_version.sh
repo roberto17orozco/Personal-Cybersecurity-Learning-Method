@@ -77,6 +77,7 @@ done
 
 #5. ---------- CHECK PERMISSIONS ----------
 check_permissions() {
+    echo "[+] Checking permissions..." >&2
     if [[ $EUID -ne 0 ]]; then
         echo -e "${RED}ERROR: This script requires sudo/root privileges.${RESET}"
         exit 1
@@ -87,6 +88,7 @@ check_permissions() {
 
 #6. ----------- CHECK DEPENDENCIES ---------
 check_dependencies() {
+    echo "[+] Checking dependencies..." >&2
     for cmd in awk grep sort uniq curl; do
         if ! command -v $cmd >/dev/null; then
             echo -e "${RED}ERROR: Missing dependency: $cmd${RESET}"
@@ -99,6 +101,7 @@ check_dependencies() {
 
 #7. ---------- COLLECT LOGS ----------
 collect_logs () {
+    echo "[+] Collecting logs..." >&2
     if [[ -n "$LOGFILE" ]]; then
         if [[ ! -f "$LOGFILE" ]]; then
             echo -e "${RED}ERROR: Log file not found: $LOGFILE${RESET}"
@@ -114,6 +117,7 @@ collect_logs () {
 
 #8. -------- FILTER EVENTS ----------
 filter_events() {
+    echo "[+] Filtering events..." >&2
     grep -E "Failed password|Invalid user|maximum authentication attempts exceeded" ssh_logs.txt > failed_events.txt
 }
 
@@ -121,6 +125,7 @@ filter_events() {
 
 #9. ---------- EXTRACT IPS ----------
 extract_ips() {
+    echo "[+] Extracting IPs..." >&2
     awk '{for(i=1;i<=NF;i++) if ($i=="from") print $(i+1)}' failed_events.txt > detected_ips.txt
 }
 
@@ -128,6 +133,7 @@ extract_ips() {
 
 #10. ---------- COUNT ATTEMPTS ----------
 count_attempts() {
+    echo "[+] Counting attempts..." >&2
     sort detected_ips.txt | uniq -c > ip_attempts.txt
 }
 
@@ -135,6 +141,7 @@ count_attempts() {
 
 #11. ---------- GEOLOOKUP ----------
 geolocate_ip() {
+    echo "[+] Performing geolocation lookup..." >&2
     local ip="$1"
     if [[ "$ENABLE_GEO" = true ]]; then
         curl -s "https://ipinfo.io/$ip/country" | tr -d '\n'
@@ -147,6 +154,7 @@ geolocate_ip() {
 
 #12. ----- CALCULATE SEVERITY ----------
 calculate_severity() {
+    echo "[+] Calculating severity..." >&2
     > severity_report.txt
     # Remove leading spaces from uniq -c output
     sed -i 's/^ *//' ip_attempts.txt
@@ -170,6 +178,7 @@ calculate_severity() {
 
 #13. ---------- GENERATE REPORT ----------
 generate_report() {
+    echo "[+] Generating report..." >&2
     echo "=============================" > "$OUTPUT"
     echo " SSH BRUTE FORCE REPORT (PRO) " >> "$OUTPUT"
     echo "=============================" >> "$OUTPUT"
@@ -186,6 +195,7 @@ generate_report() {
 
 #14. ---------- EXPORT CSV ----------
 export_csv() {
+    echo "[+] Exporting CSV..." >&2
     if [[ -n "$CSV_OUTPUT" ]]; then
         echo "IP,Attempts,Severity,Country" > "$CSV_OUTPUT"
         awk '{print $1","$2","$3","$4}' severity_report.txt >> "$CSV_OUTPUT"
@@ -197,6 +207,7 @@ export_csv() {
 
 #15. ---------- EXPORT JSON ----------
 export_json() {
+    echo "[+] Exporting JSON..." >&2
     if [[ -n "$JSON_OUTPUT" ]]; then
         echo "[" > "$JSON_OUTPUT"
         awk '{printf "{\"ip\":\"%s\",\"attempts\":%s,\"severity\":\"%s\",\"country\":\"%s\"},\n", $1,$2,$3,$4}' severity_report.txt >> "$JSON_OUTPUT"
@@ -220,6 +231,7 @@ main() {
     generate_report
     export_csv
     export_json
+    echo "[+] Report generated $REPORT_FILE" >&2
 }
 
 main
