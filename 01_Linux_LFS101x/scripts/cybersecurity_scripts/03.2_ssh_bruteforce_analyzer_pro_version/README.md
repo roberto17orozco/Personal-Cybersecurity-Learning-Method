@@ -33,7 +33,7 @@
 
 * Script Header
 
-#!/usr/bin/env bash
+#!/usr/bin/env bash\
 ############################################\
 \# SSH BRUTE FORCE ANALYZER (PRO VERSION)\
 \# Author: Roberto Orozco (2026)\
