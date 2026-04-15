@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 ###########################################
 # SSH BRUTE FORCE ANALYZER (PRO VERSION)
