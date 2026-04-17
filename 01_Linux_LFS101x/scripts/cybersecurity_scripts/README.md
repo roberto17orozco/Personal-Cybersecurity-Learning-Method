@@ -1,9 +1,10 @@
 ## Cybersecurity scripts
-After acomplishing the Linux LFS101x course I decided to work on 7 cybersecurity scripts before jumping on my next step which is the **Google Cybersecurity Certificate** course.
 
-In this directory you will find my first 10 cybersecurity scripts. They are all created with Copilot help.
+After completing the Linux LFS101x course, I decided to build 10 cybersecurity scripts before moving on to my next step: the **Google Cybersecurity Certificate**.
 
-I'm working mostly in Kali Linux in a Virtual Machine in my Laptop, I'm not managing networks, don't have remote access to other 
+In this directory, you will find my first 10 cybersecurity scripts. All of them were created with the help of Copilot.
+
+I work mainly in Kali Linux running inside a Virtual Machine on my laptop. I am not managing corporate networks, do not have remote access to other systems, and I am not working with servers. All projects are designed to run locally in a personal environment.
 
 
 The scripts you will find in this directory are:
