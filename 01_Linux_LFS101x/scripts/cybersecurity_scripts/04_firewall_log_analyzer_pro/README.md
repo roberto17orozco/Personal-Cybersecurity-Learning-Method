@@ -359,6 +359,9 @@ Using multiple lines improves readability, provides a more professional structur
     12. `}`: closes the function.
 
 
+#### firewall_reports.txt
+![txt](23.2_firewal_report_txt.jpg)
+
 **HOW THE WHILE LOOP PROCESSES EACH LINE**
 The while loop reads the ip_count.tmp file line by line. For each line, the loop uses the read command with a comma as the field separator (IFS=',') to split the line into two values: the IP address and the number of attempts. These values are assigned to the variables ip and count, respectively.
 
@@ -422,6 +425,10 @@ Finally, the loop adds a blank line to separate entries and continues processing
     3. If the instruction `GEO=$(geoiplookup "$ip" | head -n 1 | cut -d ':' -f2 | sed 's/^ //')` cannot be executed, the variable **GEO="N/A"** is created.
     4. The valued `$ip`,`$count`,`$GEO` are appended to the file referenced by **$OUTPUT_CSV** in CSV format.
 
+#### firewall_report.csv
+![csv](23.3_firewall_report_csv.jpg)
+
+
 9. **GENERATE JSON REPORT**
     1. `generate_json () {`: generates the function.
     2. Create the output file and write the opening bracket `[`.
@@ -452,7 +459,7 @@ Inside the loop, the condition if [[ "$FIRST" == false ]] is evaluated to determ
 After writing the first object, FIRST=false is assigned to indicate that all subsequent objects are no longer the first one and therefore must include a comma before them.
 
 *  Continuation...
-    8. The JSON report includes the variable **GEO**, which is created the same way it was generated in the previous section **8. GENERATE CVS REPORT**.
+    8. The JSON report includes the variable **GEO**, which is created the same way it was generated in the previous section **8. GENERATE CSV REPORT**.
     9. Append the line `{\"ip\": \"$ip\", \"attempts\": $count, \"location\": \"$GEO\"}` to the variable **$OUTPUT_JSON**
     10. `done`: to end the `while` loop.
     11. `< ip_count.tmp`: sets **ip_count.tmp** as the input file for the loop.
@@ -475,6 +482,10 @@ After writing the first object, FIRST=false is assigned to indicate that all sub
         * This executes the `main ()` function.
         * Without this line, the script would define all functions **but never run anything**.
 
+#### firewall_report.json
+![json](23.4_firewall_report_json.jpg)
+
+
 #### 3.- Make the Script Executable
 * `chmod +x firewall_log_analyzer_pro.sh`
 
@@ -484,24 +495,9 @@ After writing the first object, FIRST=false is assigned to indicate that all sub
 
 
 
----
-* End of project **four**.
-
-
-
-
-
-
-
-
-
-
-
-
-
 ### FIREWAL REPORT INTERPETATION
 
-| Detected IP        | Attempts  | Traffic Origin               | Tool / Traffic Type                 | Technical Explanation (3rd person)                                                                 | Suspicious? |
+| Detected IP        | Attempts  | Traffic Origin               | Tool / Traffic Type                 | Technical Explanation                                                                 | Suspicious? |
 |--------------------|-----------|------------------------------|-------------------------------------|-----------------------------------------------------------------------------------------------------|-------------|
 | **192.168.56.100** | 60        | Ubuntu VM (Host‑Only)        | **curl** (10×6 ports)               | These entries correspond to 60 `curl` connection attempts generated intentionally for testing.       | ❌ No       |
 | **192.168.1.100**  | 52,135    | Ubuntu VM (NAT/Bridged)      | **SSH**, **Nmap**, TCP retries      | This IP produced SSH login attempts, a full‑port Nmap scan, and TCP retransmissions caused by DROP. | ❌ No       |
@@ -516,3 +512,7 @@ After writing the first object, FIRST=false is assigned to indicate that all sub
 * **IMPORTANT**
     1. Every attempt in the report corresponds to a single network packet processed by the firewall.
     2. Every packet logged by the firewall appears as one log line in the system journal.
+
+
+---
+* End of project **four**.
