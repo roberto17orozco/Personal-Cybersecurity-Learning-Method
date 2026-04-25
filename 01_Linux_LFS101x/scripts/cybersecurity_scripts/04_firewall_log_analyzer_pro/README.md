@@ -6,7 +6,7 @@ The **iptables** tool is a user‑space interface that allows you to configure N
 When you write rules in iptables, you are actually modifying Netfilter’s behavior to allow, block, or log network traffic within a system.
 
 
-### Project purpose
+### 1.- Project purpose
 **Firewall Log Analyzer PRO** is an advanced Bash tool designed to analyze security events registered by the **firewall** in Linux systems based in **systemd-journald**.
 
 It's pupose is to identify suspicious activity in network traffic, detect attack patterns and generate professional reports for forensic analysis or security monitoring.
@@ -25,7 +25,7 @@ This script retrieves events directly from the **kernel log** using `journalctl 
 
 ---
 
-### Project environment
+### 2.-Project environment
 1. **Kali** Linux doesn't store firewall logs in directories like those in other distros (i.e., Ubuntu).
 2. Firewall logs are managed by `journald` just like the `ssh` service.
 3. `journald` doesn't generate **firewall** logs by default.
@@ -80,7 +80,7 @@ This script retrieves events directly from the **kernel log** using `journalctl 
 
 ---
 
-### Project development
+### 3.- Project development
 
 #### 1.- Create project directory
  * `/04_firewall_log_analyzer_pro`
@@ -490,12 +490,12 @@ After writing the first object, FIRST=false is assigned to indicate that all sub
 
 
 
-#### 3.- Make the Script Executable
+### 4.- Make the Script Executable
 * `chmod +x firewall_log_analyzer_pro.sh`
 
-#### 4.- Check created files
+### 5.- Check created files
 
-#### 5.- Analyze results and take propper security actions.
+### 6.- Analyze results and take propper security actions.
 
 
 
