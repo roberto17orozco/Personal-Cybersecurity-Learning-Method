@@ -466,6 +466,11 @@ After writing the first object, FIRST=false is assigned to indicate that all sub
     12. Append `]` to the output file to close the JSON array.
     13. `}`: to close the function.
 
+#### firewall_report.json
+![json](23.4_firewall_report_json.jpg)
+
+
+
 10. **CLEANUP**
     1. `cleanup () {`: to define the function.
     2. Add a colored message to describe the function purpose, send the output to stdrerr `>&2`.
@@ -482,8 +487,7 @@ After writing the first object, FIRST=false is assigned to indicate that all sub
         * This executes the `main ()` function.
         * Without this line, the script would define all functions **but never run anything**.
 
-#### firewall_report.json
-![json](23.4_firewall_report_json.jpg)
+
 
 
 #### 3.- Make the Script Executable
