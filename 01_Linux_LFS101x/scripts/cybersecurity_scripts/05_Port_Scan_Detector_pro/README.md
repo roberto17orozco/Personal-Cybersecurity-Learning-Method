@@ -55,7 +55,7 @@
 ![iptablesrules](24.2_iptables_rules.jpg)
 
 ### 2.1.- Project enviroment (generating traffic).
-In order to generate a robust and diverse report, multiple actions where taken o increment frewall logs. These actions are:
+In order to generate a robust and diverse report, multiple actions where taken from my other VM to increment frewall logs. It was not possible for me to connect both VM to different routers, therefore I couldn't add an interesting **geolocation** function in the script. All the traffic was generated from Ubuntu, to Kali. These actions are:
 1. Use a for loop to generate multiple **SSH** connection request.
 ![ssh_for_loop](24.3_ssh_for_loop.jpg)
 
