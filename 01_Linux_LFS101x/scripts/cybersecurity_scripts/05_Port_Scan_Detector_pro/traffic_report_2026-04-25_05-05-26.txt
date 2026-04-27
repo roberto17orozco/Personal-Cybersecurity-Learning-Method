@@ -1,0 +1,200 @@
+Attacker IP: 180.167.128.203
+  IP type: Public
+  Distinct ports: 1
+  Port range: 22 - 22
+  First event: Apr 25 04:48:23
+  Last event: Apr 25 04:48:23
+  Traffic nature:
+    - SSH (port 22 attempts)
+    - SYN-only packets (possible Nmap scan)
+-----------------------------
+Attacker IP: 80.94.92.168
+  IP type: Public
+  Distinct ports: 1
+  Port range: 22 - 22
+  First event: Apr 25 04:57:03
+  Last event: Apr 25 04:57:03
+  Traffic nature:
+    - SSH (port 22 attempts)
+    - SYN-only packets (possible Nmap scan)
+-----------------------------
+Attacker IP: 172.233.243.85
+  IP type: Public
+  Distinct ports: 1
+  Port range: 80 - 80
+  First event: Apr 25 04:45:13
+  Last event: Apr 25 04:45:13
+  Traffic nature:
+    - HTTP (curl or browser)
+    - SYN-only packets (possible Nmap scan)
+-----------------------------
+Attacker IP: 51.158.205.203
+  IP type: Public
+  Distinct ports: 1
+  Port range: 22 - 22
+  First event: Apr 25 04:27:18
+  Last event: Apr 25 04:27:18
+  Traffic nature:
+    - SSH (port 22 attempts)
+    - SYN-only packets (possible Nmap scan)
+-----------------------------
+Attacker IP: 20.64.105.169
+  IP type: Public
+  Distinct ports: 1
+  Port range: 80 - 80
+  First event: Apr 25 05:05:09
+  Last event: Apr 25 05:05:09
+  Traffic nature:
+    - HTTP (curl or browser)
+    - SYN-only packets (possible Nmap scan)
+-----------------------------
+Attacker IP: 170.64.167.72
+  IP type: Public
+  Distinct ports: 1
+  Port range: 22 - 22
+  First event: Apr 25 04:35:38
+  Last event: Apr 25 04:35:38
+  Traffic nature:
+    - SSH (port 22 attempts)
+    - SYN-only packets (possible Nmap scan)
+-----------------------------
+Attacker IP: 185.242.226.108
+  IP type: Public
+  Distinct ports: 1
+  Port range: 80 - 80
+  First event: Apr 25 04:23:55
+  Last event: Apr 25 04:23:55
+  Traffic nature:
+    - HTTP (curl or browser)
+    - SYN-only packets (possible Nmap scan)
+-----------------------------
+Attacker IP: 192.168.56.1
+  IP type: Private (RFC1918)
+  Victim netmask: /24
+  Network (CIDR): 192.168.1.0/24       11000000.10101000.00000001. 00000000
+  Local gateway: 192.168.1.254
+  Distinct ports: 3
+  Port range: 111 - 2049
+  First event: Apr 25 03:54:03
+  Last event: Apr 25 05:05:28
+  Traffic nature:
+    - UDP traffic
+    - SYN-only packets (possible Nmap scan)
+-----------------------------
+Attacker IP: 192.168.1.66
+  IP type: Private (RFC1918)
+  Victim netmask: /24
+  Network (CIDR): 192.168.1.0/24       11000000.10101000.00000001. 00000000
+  Local gateway: 192.168.1.254
+  Distinct ports: 59
+  Port range: 1009 - 9999
+  First event: Apr 25 03:53:48
+  Last event: Apr 25 05:05:28
+  Scan type: Random
+  Traffic nature:
+    - ICMP (possible ping)
+    - SSH (port 22 attempts)
+    - HTTP (curl or browser)
+    - UDP traffic
+    - SYN-only packets (possible Nmap scan)
+    - Port scanning (possible nmap)
+-----------------------------
+Attacker IP: 93.174.93.12
+  IP type: Public
+  Distinct ports: 1
+  Port range: 80 - 80
+  First event: Apr 25 04:32:00
+  Last event: Apr 25 04:32:00
+  Traffic nature:
+    - HTTP (curl or browser)
+    - SYN-only packets (possible Nmap scan)
+-----------------------------
+Attacker IP: 5.61.209.107
+  IP type: Public
+  Distinct ports: 1
+  Port range: 80 - 80
+  First event: Apr 25 04:00:19
+  Last event: Apr 25 04:57:42
+  Traffic nature:
+    - HTTP (curl or browser)
+    - SYN-only packets (possible Nmap scan)
+-----------------------------
+Attacker IP: 194.88.98.88
+  IP type: Public
+  Distinct ports: 1
+  Port range: 22 - 22
+  First event: Apr 25 04:46:44
+  Last event: Apr 25 04:46:44
+  Traffic nature:
+    - SSH (port 22 attempts)
+    - SYN-only packets (possible Nmap scan)
+-----------------------------
+Attacker IP: 204.76.203.206
+  IP type: Public
+  Distinct ports: 1
+  Port range: 80 - 80
+  First event: Apr 25 04:25:24
+  Last event: Apr 25 05:05:07
+  Traffic nature:
+    - HTTP (curl or browser)
+    - SYN-only packets (possible Nmap scan)
+-----------------------------
+Attacker IP: 189.173.121.56
+  IP type: Public
+  First event: Apr 25 03:54:18
+  Last event: Apr 25 05:05:08
+  Traffic nature:
+    - Generic TCP traffic
+-----------------------------
+Attacker IP: 52.176.139.88
+  IP type: Public
+  Distinct ports: 1
+  Port range: 22 - 22
+  First event: Apr 25 04:55:03
+  Last event: Apr 25 04:55:16
+  Traffic nature:
+    - SSH (port 22 attempts)
+    - SYN-only packets (possible Nmap scan)
+-----------------------------
+Attacker IP: 45.156.128.201
+  IP type: Public
+  Distinct ports: 1
+  Port range: 80 - 80
+  First event: Apr 25 04:02:08
+  Last event: Apr 25 04:02:08
+  Traffic nature:
+    - HTTP (curl or browser)
+    - SYN-only packets (possible Nmap scan)
+-----------------------------
+Attacker IP: 192.168.1.71
+  IP type: Private (RFC1918)
+  Victim netmask: /24
+  Network (CIDR): 192.168.1.0/24       11000000.10101000.00000001. 00000000
+  Local gateway: 192.168.1.254
+  Distinct ports: 2
+  Port range: 56700 - 9999
+  First event: Apr 25 04:52:10
+  Last event: Apr 25 04:52:10
+  Traffic nature:
+    - UDP traffic
+-----------------------------
+Attacker IP: 180.167.128.202
+  IP type: Public
+  Distinct ports: 1
+  Port range: 22 - 22
+  First event: Apr 25 04:05:53
+  Last event: Apr 25 04:05:53
+  Traffic nature:
+    - SSH (port 22 attempts)
+    - SYN-only packets (possible Nmap scan)
+-----------------------------
+Attacker IP: 52.249.221.45
+  IP type: Public
+  Distinct ports: 1
+  Port range: 80 - 80
+  First event: Apr 25 03:59:25
+  Last event: Apr 25 03:59:25
+  Traffic nature:
+    - HTTP (curl or browser)
+    - SYN-only packets (possible Nmap scan)
+-----------------------------
