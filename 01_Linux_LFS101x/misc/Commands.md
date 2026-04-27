@@ -45,3 +45,43 @@ This file contains a variety of useful commands. They will be added as I progres
 ## Networking
 1. `nm-connection-editor` to open conection editor window. It  works to change some configuration options for **IPv4** like *Method* or *DNS servers*. 
 2. `nmcli device status` used to know what is my active connection.
+3. `ip route` is used to identify the systm's active outbound interface. This command shows the routing table. The interface used for external communication is the one that appears in the line containing **default via**, marked as **dev**. Example: dev **eth0**.
+4. `ip a` lists all IP addresses assigned to all system interfaces.
+    * **IMPORTANT**: to determinate the system's Local IP (my system IP):
+        1. Run `ip route` and identify the **active outbound inteface**. It is the interface shown in the **default via** line (e.g., dev **eth0**).      
+        2. Run `ip a` and locate the IP assigned to that inteerface. The IPv4 address (inet) of the active interface is the system's Local IP on the current network.
+
+### Steps to identify lour Local IP
+| Steps | Command | How it helps |
+|---------------------------------|----------|--------------|
+| Identify the active outbound interface | `ip route` | The interface used for external communication appears in the line containing `default via`, marked as `dev` (e.g., `dev eth0`). |
+| List all IPs assigned to all interfaces | `ip a` | Once the active interface is known, look for its `inet` IPv4 address. That address is the system’s Local IP on the current network. |
+
+---
+
+
+5. `ipcalc <LocalIP><Mask>` is used to identify the Local Network (the network prefix) that your device belongs to.
+    * **Local Network**: A local network (LAN or subnet) is the IP range your device is part of, defined by your IP address and subnet mask. All devices inside this range can talk to each other without passing through a gateway.
+    * You can run `ip route` too and look for the line that matches your active interface (e.g., 172.16.16.0/20 dev eth0, ) that prefix is your Local Network.
+    * A **subnet mask**, (or mask) is a value that defines the size of your local network. It tells your system:
+        1. Which IP addresses are part of your network, and
+        2. Which IP addresses are outside and must be sent to the gateway.
+        * FOr example:
+            - IP: 172.16.29.148
+            - Mask: /20
+                * The first **20 bits** identify the network,
+                * the remainning **12 bits** identify hosts inside that network.
+                * This produces the network:
+                    - **172.16.16.0/20**
+    * The **gateway** is the address of the device (usually the router) that my computer uses to leave the Local Network. You can find it in the `ip route` output as the IP shown after default via. 
+    * **Public IP**: Your public IP is the address that your internet provider gives to your router so your whole home network can connect to the internet. It’s the IP that websites and external servers see when you visit them. Your router does not invent or decide the public IP — it simply receives the public IP assigned by the ISP.
+        * `curl ifconfig.me` to check your public IP.
+
+### Local vs Public Network Concepts
+| Concept | Description |
+|---------|-------------|
+| **Local IP** | The IPv4 address assigned to your device inside the local network (e.g., `172.16.29.148/20`). It identifies your machine only within the LAN. |
+| **Subnet Mask** | Defines how many bits belong to the network portion of the IP (e.g., `/20`). It determines the size of the local network. |
+| **Local Network** | The network range your device belongs to, calculated from the Local IP + Subnet Mask (e.g., `172.16.16.0/20`). All devices in this range are considered “local.” |
+| **Gateway** | The internal IP address of the router that your device uses to leave the local network (e.g., `172.16.16.1`). All external traffic is sent to this device. |
+| **Public IP** | The IP address assigned by your ISP to your router (e.g., `189.173.111.83`). It is the address that websites and external servers see when you connect to the internet. |
