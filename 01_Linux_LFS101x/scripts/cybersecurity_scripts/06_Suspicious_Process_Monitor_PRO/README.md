@@ -6,6 +6,9 @@
 
 ## 1.- Script Architecture
 
+![illustration](script_6_illustrator.jpg)
+
+
 This project is structured as a modular Bash‑based monitoring tool. Its architecture is composed of several clearly separated components:
 
 1. **AWK Command Blocks**: Three lightweight filters used for CPU analysis, network‑active processes, and unexpected root activity. Each block operates as a standalone command, not as an embedded AWK program.
