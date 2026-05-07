@@ -1,0 +1,160 @@
+=====================================================
+ Suspicious Process Monitor PRO – Full Scan
+ Generated: Tue May  5 05:54:49 PM MST 2026
+=====================================================
+
+=== High CPU Usage Processes (> 25%) ===
+PID: 118893 | CPU: 100% | USER: robert | CMD: ps
+
+=== Processes Running from Suspicious Directories ===
+
+=== Processes with Open Network Ports ===
+Protocol: udp | Local: 0.0.0.0:111 | PID/Program: 
+Protocol: udp | Local: 0.0.0.0:59968 | PID/Program: 
+Protocol: udp | Local: 127.0.0.1:648 | PID/Program: 
+Protocol: udp | Local: 0.0.0.0:46158 | PID/Program: 
+Protocol: udp | Local: 0.0.0.0:48303 | PID/Program: 
+Protocol: udp | Local: 0.0.0.0:46428 | PID/Program: 
+Protocol: udp | Local: 0.0.0.0:36210 | PID/Program: 
+Protocol: udp | Local: [::]:59044 | PID/Program: 
+Protocol: udp | Local: [::]:49250 | PID/Program: 
+Protocol: udp | Local: [::]:111 | PID/Program: 
+Protocol: udp | Local: [::]:49618 | PID/Program: 
+Protocol: udp | Local: [::]:40256 | PID/Program: 
+Protocol: udp | Local: [::]:58787 | PID/Program: 
+Protocol: tcp | Local: 0.0.0.0:59891 | PID/Program: 
+Protocol: tcp | Local: 0.0.0.0:47301 | PID/Program: 
+Protocol: tcp | Local: 0.0.0.0:57491 | PID/Program: 
+Protocol: tcp | Local: 0.0.0.0:111 | PID/Program: 
+Protocol: tcp | Local: 0.0.0.0:2049 | PID/Program: 
+Protocol: tcp | Local: 0.0.0.0:40979 | PID/Program: 
+Protocol: tcp | Local: 0.0.0.0:22 | PID/Program: 
+Protocol: tcp | Local: 0.0.0.0:39811 | PID/Program: 
+Protocol: tcp | Local: [::]:40009 | PID/Program: 
+Protocol: tcp | Local: [::]:51185 | PID/Program: 
+Protocol: tcp | Local: [::]:48963 | PID/Program: 
+Protocol: tcp | Local: [::]:59207 | PID/Program: 
+Protocol: tcp | Local: [::]:44613 | PID/Program: 
+Protocol: tcp | Local: [::]:111 | PID/Program: 
+Protocol: tcp | Local: [::]:2049 | PID/Program: 
+Protocol: tcp | Local: [::]:22 | PID/Program: 
+
+=== Short-Lived Processes (appear/disappear quickly) ===
+PID: 119352 | CMD: 
+PID: 119342 | CMD: 
+
+=== Unexpected Root Processes ===
+PID: PID | USER: USER | CMD: COMMAND
+PID: 1 | USER: root | CMD: /sbin/init
+PID: 2 | USER: root | CMD: [kthreadd]
+PID: 3 | USER: root | CMD: [pool_workqueue_release]
+PID: 4 | USER: root | CMD: [kworker/R-rcu_gp]
+PID: 5 | USER: root | CMD: [kworker/R-sync_wq]
+PID: 6 | USER: root | CMD: [kworker/R-kvfree_rcu_reclaim]
+PID: 7 | USER: root | CMD: [kworker/R-slub_flushwq]
+PID: 8 | USER: root | CMD: [kworker/R-netns]
+PID: 10 | USER: root | CMD: [kworker/0:0H-events_highpri]
+PID: 13 | USER: root | CMD: [kworker/R-mm_percpu_wq]
+PID: 14 | USER: root | CMD: [ksoftirqd/0]
+PID: 15 | USER: root | CMD: [rcu_preempt]
+PID: 16 | USER: root | CMD: [rcu_exp_par_gp_kthread_worker/0]
+PID: 17 | USER: root | CMD: [rcu_exp_gp_kthread_worker]
+PID: 18 | USER: root | CMD: [migration/0]
+PID: 19 | USER: root | CMD: [idle_inject/0]
+PID: 20 | USER: root | CMD: [cpuhp/0]
+PID: 21 | USER: root | CMD: [cpuhp/1]
+PID: 22 | USER: root | CMD: [idle_inject/1]
+PID: 23 | USER: root | CMD: [migration/1]
+PID: 24 | USER: root | CMD: [ksoftirqd/1]
+PID: 26 | USER: root | CMD: [kworker/1:0H-kblockd]
+PID: 29 | USER: root | CMD: [kdevtmpfs]
+PID: 30 | USER: root | CMD: [kworker/R-inet_frag_wq]
+PID: 31 | USER: root | CMD: [rcu_tasks_kthread]
+PID: 32 | USER: root | CMD: [rcu_tasks_rude_kthread]
+PID: 33 | USER: root | CMD: [rcu_tasks_trace_kthread]
+PID: 34 | USER: root | CMD: [kauditd]
+PID: 35 | USER: root | CMD: [khungtaskd]
+PID: 36 | USER: root | CMD: [oom_reaper]
+PID: 38 | USER: root | CMD: [kworker/R-writeback]
+PID: 39 | USER: root | CMD: [kcompactd0]
+PID: 40 | USER: root | CMD: [ksmd]
+PID: 41 | USER: root | CMD: [khugepaged]
+PID: 42 | USER: root | CMD: [kworker/R-kblockd]
+PID: 43 | USER: root | CMD: [kworker/R-blkcg_punt_bio]
+PID: 44 | USER: root | CMD: [kworker/R-kintegrityd]
+PID: 45 | USER: root | CMD: [irq/9-acpi]
+PID: 47 | USER: root | CMD: [kworker/R-tpm_dev_wq]
+PID: 48 | USER: root | CMD: [kworker/R-edac-poller]
+PID: 49 | USER: root | CMD: [kworker/R-devfreq_wq]
+PID: 50 | USER: root | CMD: [kworker/R-quota_events_unbound]
+PID: 51 | USER: root | CMD: [kworker/0:1H-kblockd]
+PID: 52 | USER: root | CMD: [kswapd0]
+PID: 53 | USER: root | CMD: [kdamond.0]
+PID: 56 | USER: root | CMD: [kworker/R-kthrotld]
+PID: 57 | USER: root | CMD: [kworker/R-acpi_thermal_pm]
+PID: 58 | USER: root | CMD: [kworker/R-mld]
+PID: 60 | USER: root | CMD: [kworker/R-ipv6_addrconf]
+PID: 61 | USER: root | CMD: [kworker/R-kstrp]
+PID: 200 | USER: root | CMD: [kworker/R-ata_sff]
+PID: 202 | USER: root | CMD: [scsi_eh_0]
+PID: 203 | USER: root | CMD: [kworker/R-scsi_tmf_0]
+PID: 204 | USER: root | CMD: [scsi_eh_1]
+PID: 205 | USER: root | CMD: [kworker/R-scsi_tmf_1]
+PID: 206 | USER: root | CMD: [scsi_eh_2]
+PID: 207 | USER: root | CMD: [kworker/R-scsi_tmf_2]
+PID: 211 | USER: root | CMD: [irq/18-vmwgfx]
+PID: 212 | USER: root | CMD: [kworker/R-ttm]
+PID: 245 | USER: root | CMD: [jbd2/sda1-8]
+PID: 246 | USER: root | CMD: [kworker/R-ext4-rsv-conversion]
+PID: 345 | USER: root | CMD: [kworker/R-rpciod]
+PID: 346 | USER: root | CMD: [kworker/R-xprtiod]
+PID: 384 | USER: root | CMD: [psimon]
+PID: 406 | USER: root | CMD: /usr/sbin/haveged
+PID: 442 | USER: root | CMD: [psimon]
+PID: 471 | USER: root | CMD: /usr/libexec/accounts-daemon
+PID: 542 | USER: root | CMD: /usr/bin/atop
+PID: 613 | USER: root | CMD: /usr/sbin/nfsdcld
+PID: 614 | USER: root | CMD: [kworker/R-iprt-VBoxWQueue]
+PID: 686 | USER: root | CMD: /usr/sbin/ModemManager
+PID: 753 | USER: root | CMD: /usr/bin/VBoxDRMClient
+PID: 757 | USER: root | CMD: /usr/sbin/VBoxService
+PID: 850 | USER: root | CMD: /usr/sbin/lightdm
+PID: 883 | USER: root | CMD: /usr/lib/xorg/Xorg
+PID: 885 | USER: root | CMD: /usr/sbin/agetty
+PID: 893 | USER: root | CMD: /usr/sbin/rpc.idmapd
+PID: 897 | USER: root | CMD: /usr/sbin/rpc.mountd
+PID: 915 | USER: root | CMD: [lockd]
+PID: 928 | USER: root | CMD: [nfsd]
+PID: 929 | USER: root | CMD: [nfsd]
+PID: 930 | USER: root | CMD: [nfsd]
+PID: 931 | USER: root | CMD: [nfsd]
+PID: 932 | USER: root | CMD: [nfsd]
+PID: 933 | USER: root | CMD: [nfsd]
+PID: 934 | USER: root | CMD: [nfsd]
+PID: 935 | USER: root | CMD: [nfsd]
+PID: 936 | USER: root | CMD: [nfsd]
+PID: 937 | USER: root | CMD: [nfsd]
+PID: 938 | USER: root | CMD: [nfsd]
+PID: 939 | USER: root | CMD: [nfsd]
+PID: 940 | USER: root | CMD: [nfsd]
+PID: 941 | USER: root | CMD: [nfsd]
+PID: 942 | USER: root | CMD: [nfsd]
+PID: 943 | USER: root | CMD: [nfsd]
+PID: 990 | USER: root | CMD: [psimon]
+PID: 1153 | USER: root | CMD: lightdm
+PID: 1590 | USER: root | CMD: /usr/libexec/upowerd
+PID: 1956 | USER: root | CMD: /usr/libexec/udisks2/udisksd
+PID: 2218 | USER: root | CMD: fusermount3
+PID: 12646 | USER: root | CMD: [kworker/1:2H]
+PID: 67523 | USER: root | CMD: [kworker/u8:0-events_unbound]
+PID: 77909 | USER: root | CMD: [kworker/u9:2-ttm]
+PID: 84208 | USER: root | CMD: [kworker/1:2-events]
+PID: 85565 | USER: root | CMD: [kworker/u8:1-iou_exit]
+PID: 104350 | USER: root | CMD: [kworker/u9:0-ttm]
+PID: 108763 | USER: root | CMD: [kworker/u8:5-events_unbound]
+PID: 111539 | USER: root | CMD: [kworker/0:1-ata_sff]
+PID: 113237 | USER: root | CMD: [kworker/1:0-ata_sff]
+PID: 114510 | USER: root | CMD: [kworker/0:0-events]
+PID: 116866 | USER: root | CMD: [kworker/1:1-ata_sff]
+PID: 118716 | USER: root | CMD: [kworker/0:2-ata_sff]
+
