@@ -20,7 +20,8 @@ This project is structured as a modular Bash‑based monitoring tool. Its archit
 
 This architecture emphasizes modularity, clarity, and separation of responsibilities, matching the structure shown in the illustration.
 
-![architecture](script_6_illustration.png)
+
 
 ## 2.- System enviromenment and configuration
-Since this project does not analyzes network traffic but systems process only, there is no need to manage any networking configurations like iptables, firewalls or network adapters for my Virtual Machine.  Also there is no need to generate traffic in my local machine or from another machine remotely.
+Since this project analyzes system processes only and does not inspect network traffic, there is no need to configure networking components such as iptables, firewalls, or virtual network adapters. Likewise, there is no requirement to generate traffic on the local machine or from any external system.
+
