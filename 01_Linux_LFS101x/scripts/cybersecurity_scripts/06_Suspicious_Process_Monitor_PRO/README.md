@@ -4,37 +4,56 @@
 
 
 
-## 1.- Script Architecture
+## 1.- Script Architecture and Development
+![illustration](script_6_illustration.jpg)
 
 
 
-## 1. Architecture Overview
+
+
+## 1.1.- Architecture Overview
 
 This project follows a modular architecture where each detection capability is implemented as an independent Bash function. The system includes:
 
-- a primary data‑generation module  
+- a primary detection module  
 - multiple analysis modules  
 - a full‑scan orchestrator  
 - a continuous watch subsystem  
 - a CLI dispatcher for user interaction  
 
-Although several software‑design methodologies exist (Top‑Down, Bottom‑Up, Layered Organization), **this project was actually written using a Flow‑Driven Implementation approach**.
 
-Flow‑Driven means the script was constructed in the same order that data flows through the system:
 
-1. the module that generates the core data  
-2. the function that evaluates that data  
-3. the configuration required by the logic  
-4. the utilities used across modules  
-5. the secondary detection modules  
-6. the full‑scan orchestrator  
-7. the watch‑mode subsystem  
-8. the CLI handler  
-9. reporting and timestamp initialization  
-10. cosmetic elements (colors)  
-11. final metadata and header  
+## 1.2.- Development Overview
 
-This approach results in a clean, intuitive, and logically consistent construction sequence that mirrors the real execution flow of the monitoring tool.
+Although several software‑design methodologies exist (Top‑Down, Bottom‑Up, Layered Organization), **this project was written using the Development‑Driven Construction Order method**.
+
+Under this method, the script is constructed in the natural order in which its **functional components should be built**. Each step in the construction process is treated as a **development block**, representing a self‑contained unit of functionality that depends on the previous ones.
+
+The script was developed following this sequence of **development blocks**:
+
+1. **Core Detection Module (Suspicious Execution Paths)**: Central logic of the system. Scan processes and identifies those running from suspicious directories.
+2. **Path Evaluation Function**: Evaluator used by the core module to classify suspicious paths.
+3. **Configuration Block**: Defines thresholds, directories, and timing parameters.
+4. **Utility Functions**: Logging helpers and formatted terminal output utilities.
+5. **Secondary Detection Modules**: Additional detection capabilities that extend the system.
+    1. CPU Anomaly Detection.
+    2. Network-Active Process Detection.
+    3. Short-Lived Proess Detection.
+    4. Unexpected Root Process Detection.
+6. **Full Scan Orchestrator**: Runs all detection modules and generates a complete report.
+7. **Watch Mode Sybsystem**: Continously executes the full scan at a defined interval.
+8. **CLI Dispatcher**: Routes command-line arguments to the appropiate module.
+9. **Timestamp & Report Initialization**: Creates the timestamp and report filename.
+10. **Color Definitions**: ANSI color codes for formatted terminal output.
+11. **Header & Metadata**: Project title, author, purpose.
+12. **End of Script Notification**: Final message printed after execution.
+
+
+
+These development blocks are shown in the **illustration above**, placed on the left side of the code inside blue boxes. Their purpose is to provide a visual representation of the order in which the script was constructed.
+
+This approach results in a clean, intuitive, and logically consistent construction sequence that reflects how an engineer naturally builds a system from the inside out.
+
 
 
 
