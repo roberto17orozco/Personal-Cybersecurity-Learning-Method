@@ -62,7 +62,7 @@ This approach results in a clean, intuitive, and logically consistent constructi
 Since this project analyzes system processes only and does not inspect network traffic, there is no need to configure networking components such as iptables, firewalls, or virtual network adapters. Likewise, there is no requirement to generate traffic on the local machine or from any external system.
 
 ## 3.- Script Breakdown
-This section breaks down the script following its visual top‑to‑bottom order. It does not represent the chronological order in which the script was developed, but rather the order in which the user sees and reads the final completed script.
+This section breaks down the script following its visual top‑to‑bottom order. **It does not represent the chronological order in which the script was developed**, but rather the order in which the user sees and reads the final completed script. Each subsection explains the purpose and behavior of the corresponding lines without embedding the full code.
 
 
 ### 3.1.- Header & Metadata ( 1 - 7)
@@ -763,5 +763,43 @@ Final message printed when the script finishes execution.
 
 ## 4.- Final report interpretation
 
+![report 1](25.1_pmreport_1.jpg)
+
+### 4.1.- High CPU usage processes
+The only entry in this section is the `ps` command at 100%, which is normal because `ps` briefly spikes CPU usage when executed.
+* Interpretation: No malicious activity; expected behavior.
+
+### 4.2.- Processes Running from Suspicious Directories
+The section is empty.
+* Interpretation: No processes are running from suspicious paths; this is a good sign.
+
+### 4.3.- Processes with Open Network Ports
+Many entries lack a PID because kernel-level sockets or system services do not always map to a user-space process.
+
+All ports shown (SSH, NFS, system services) are typical for a **Linux VM**.
+
+* Interpretation: Normal system activity; no suspicious network listeners detected.
+
+![report 2](25.2_pmreport_2.jpg)
+
+### 4.4.- Short-Lived Processes (appear/disappear quickly)
+Short-lived processes are common in Linux (kernel tasks, system utilities, background jobs).
+
+The **commands** are empty because the processes ended before their command line could be captured.
+
+* Interpretation: Normal behavior; not indicative of malicious activity.
+
+### 4.5.- Unexpected Root Processes
+Displays root‑owned processes that do not match a small whitelist of expected services.
+Most entries are kernel threads (`[kworker]`, `[rcu]`, `[nfsd]`, etc.) or legitimate system daemons (`Xorg`, `lightdm`, `VBoxService`, `ModemManager`).
+
+* Interpretation: All entries are normal for a Linux system, **especially inside a virtual machine**. No malicious root processes detected.
 
 
+### 4.6.- Overall Summary
+* The report shows no indicators of compromise.
+* All detected items correspond to normal system behavior in a **Linux VM** enviroment.
+
+---
+End of project **six**, thanks for reading.
+- Roberto Orozco
