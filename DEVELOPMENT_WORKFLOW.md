@@ -15,19 +15,20 @@ This workflow was adopted after a personal technical realization, derived from:
 Through that learning journey, I identified that the **Development‑Driven Construction Order** is the most natural, scalable, and engineering‑oriented method for building system‑level scripts.  
 This document formalizes that workflow.
 
-### **Definition — Development‑Driven Construction Order**  
-**Development‑Driven Construction Order** is a software development methodology in which the script is constructed following the natural order in which its **functional components** should be built.  
+### 1.1.- **Definition — Development‑Driven Construction Order**  
+**Development‑Driven Construction Order** is a software development methodology in which the script is constructed following the natural order in which its **conceptual components** should be built.
 
-The construction sequence is determined by:
+Unlike dependency-driven or execution-driven models, DDCO organizes the construction process according to:
 
-1. Logical dependencie
-2. Functional relationships
-3. Architectural roles
-4. The natural flow of the system
+1. Arquitectural roles
+2. Functional responsabilities
+3. Logical grouping of capabilities
+4. The natural conceptual flow of the system
+
 
 DDCO ensures that the script grows in a clear, structured, and maintainable way, avoiding rework and guaranteeing reproducibility.
 
-### Purpose of DDCO
+### 1.2.- Purpose of DDCO
 DDCO is designed to:
 
 1. Prevent writing components that depend on code that does not yet exist.
@@ -40,42 +41,56 @@ DDCO is a **method of construction**, not a method of execution.
 It defines **how the script is built**, not how the script runs.
 
 ---
-## 2. **DDCO Variants — Core‑First and Foundations‑First**
-DDCO has two variants, which together cover **100% of all scripts**, regardless of language.
 
-### 2.1 Core‑First Variant
-Used when the script has a **dominant functional core** that defines the flow of the system.
+### 1.3.- DDCO Variants: Calssic and Foundations-First
 
-Typical in:
+DDCO has two variants, wich together cover 100% of all scripts, regardless of language.
 
-* detectors
-* analyzers
-* parsers
-* rule engines
-* data pipelines
-* systems with a clear “heart”
+#### 1.3.1.- Classic Variant
+DDCO‑Classic organizes the script according to conceptual responsibility, not strict dependency order.
+The construction sequence follows the natural way an engineer groups and structures the system’s functional modules.
 
-Construction proceeds **from the core outward**.
+**Typical in:**
 
-* **Important:**
-    * In cybersecurity, the **Core‑First** variant is used in approximately **60–70% of cases**, due to the fact that most security tools are built around a dominant functional core (detectors, parsers, analyzers, correlation engines, and monitoring pipelines).
+1. monitoring tools
+2. multi‑module detectors
+3. process analyzers
+4. orchestrators
+5. CLI‑driven utilities
+6. systems with multiple independent detection capabilities
 
-### 2.2 Foundations‑First Variant
-Used when the script does **not** have a central core and instead **depends on**:
+**Construction proceeds by grouping:**
 
-* configuration
-* utilities
-* initialization
-* environment setup
+1. The primary module
+2. Supporting evaluators
+3. Configuration
+4. Utilities
+5. Secondary modules
+6. Orchestrators
+7. CLI
+8. Metadata and infrastructure
 
-Typical in:
+This variant is ideal for documentation, clarity, and modular organization.
 
-* automation scripts
-* multipurpose CLI tools
-* wrappers
-* scripts with independent modules
+* **IMPORTANT:**
+In cybersecurity and systems engineering, the DDCO‑Classic variant is used in approximately 60–70% of cases, especially in tools composed of multiple functional modules that operate independently but contribute to a unified workflow (process monitors, multi‑stage analyzers, orchestrators, and modular detection systems).
+This variant is preferred when the architecture is best understood by grouping components according to their conceptual responsibilities, rather than by strict dependency chains.
 
-Construction proceeds from **foundational components upward**.
+#### 1.3.2.- Foundations-First Variant
+Used when the script does not have a dominant conceptual module and instead depends on:
+
+1. configuration
+2. utilities
+3. initialization
+4. environment setup
+
+**Typical in:**
+1. automation scripts
+2. multipurpose CLI tools
+3. wrappers
+4. scripts with independent modules
+
+
 
 * **IMPORTANT:**
     * In cybersecurity, the **Foundations‑First** variant is used in approximately **30–40% of cases**, primarily in tools that rely on configuration, initialization routines, or multipurpose command‑line interfaces rather than a dominant functional core (automation scripts, wrappers, orchestrators, and data‑processing utilities).
@@ -108,13 +123,13 @@ For every project, Copilot provides a complete **Script Breakdown Index**, which
 - hierarchical titles and subtitles  
 - numbering aligned with the visual structure of the script  
 
-This index is designed to be copied directly into the README.
+This index is designed to be copied directly into the README ad reflects the visual organization of the script.
 
 ---
 
 ## **5. Development Blocks (Provided by Copilot)**
 
-For every project, Copilot provides a complete set of Development Blocks, which represent the chronological construction order of the script according to the **Development‑Driven Construction Order (DDCO)** methodology.
+For every project, Copilot provides a complete set of Development Blocks, which represent the conceptual construction order of the script according to the **Development‑Driven Construction Order (DDCO-Classic)** methodology.
 
 Each Development Block includes:
 
@@ -124,27 +139,15 @@ Each Development Block includes:
 4. the exact code that belongs to that block
 5. the Script Breakdown title or subtitle where it must be placed
 
-### Variant Determination (Core‑First or Foundations‑First)
-Before generating the Development Blocks, Copilot analyzes the architecture of the script and determines which DDCO variant applies:
 
-1. **Core‑First Variant** → used when the script has a dominant functional core.
-2. **Foundations‑First Variant** → used when the script depends on initialization and utilities.
-
-For each project, Copilot explicitly states:
-
-1. which variant is being used,
-2. why that variant applies, and
-3. how the variant influences the construction order.
-
-This ensures that the Development Blocks always follow the correct architectural logic for the specific script being generated.
 
 ### Important Notes
-1. Development Blocks represent the **true chronological order** in which a human should construct the script.
-2. Copilot does not provide a pre‑filled Script Breakdown Index.
-3. Copilot provides only the ordered Development Blocks.
-4. I manually place each Development Block into its correct Script Breakdown title or subtitle inside the README.
-
-This guarantees that the README accurately reflects the real architecture and construction sequence of the system.
+1. Development Blocks represent the **conceptual construction sequence** not dependency order or execution order.
+2. Copilot provides the **Development Blocks**, and I manually place each one into its corresponding Script Breakdown section inside the README.
+3. The Script Breakdown Index and the Development Blocks serve **differente purposes:**
+    1. The Breakdown reflects the **visual structure** of the script.
+    2. The Development Blocks reflect the **conceptual construction order**.
+4. This guarantees that the README accurately represents both the **architecture** and the **conceptual development flow** of the system.
 
 ---
 
@@ -195,7 +198,7 @@ Every project follows the same pattern:
 
 1. Copilot generates the script.  
 2. Copilot provides the Script Breakdown Index.  
-3. Copilot provides the ordered Development Blocks indicating the variant being used.  
+3. Copilot provides the ordered Development Blocks.  
 4. I create the visual illustration.  
 5. I write the README.  
 6. I fill any remaining empty sections.  
@@ -208,12 +211,16 @@ Every project follows the same pattern:
 |------|--------|-------------|------------------------|
 | **1. Script Generation** | Copilot | Copilot always generates the PRO version of the script. The PRO version is defined as a modular, scalable, professional architecture that follows the Core‑First DDCO variant. This includes: a functional core, subordinate evaluators, specialized modules, a full orchestrator, CLI handler, and utility functions. All scripts generated by Copilot must follow this PRO (Core‑First) architecture by default. | Fully generated PRO script with Core‑First architecture and functional modules. |
 | **2. Script Breakdown Index** | Copilot | Copilot analyzes the script and produces a hierarchical Script Breakdown Index using a strict Markdown‑based structure. The index must reflect the real visual structure of the script and follow a consistent heading hierarchy: # for the main section title, ## for section titles, ### for subsections, #### for sub‑subsections. All levels must be numbered (e.g., 3.7, 3.7.1, 3.7.2) and must include the corresponding line ranges. The index must mirror the script’s actual layout without reordering, merging, or interpreting architecture. This index is purely visual and is not related to the DDCO sequence. | A fully structured, numbered, Markdown‑formatted Script Breakdown Index. |
-| **3. Development-Driven Construction Order Blocks** | Copilot | Identifies and provides the chronological construction sequence of the script. This sequence is unique to each project and reflects the order in which the script is conceptually built, not the visual order of the script or the Script Breakdown Index. Each block includes a title, a technical description, the corresponding line range, and the exact code. The construction order must remain consistent across all regenerations for the same script, ensuring stable documentation and alignment with the visual illustration. Copilot also indicates which DDCO variant (Core‑First or Foundations‑First) applies to the project and provides a brief technical justification for that choice. Copilot delivers the natural, architectural chronological order of the Development Blocks according to the detected DDCO variant, rather than the visual layout of the script or its Script Breakdown Index. | Ordered list of Development Blocks with code. |
+| **3. Development-Driven Construction Order Blocks** | Copilot | Identifies and provides the **conceptual construction sequence** of the script. This sequence is unique to each project and reflects the order in which the script is conceptually organized, not the visual order of the script or the Script Breakdown Index. Each Development Block represents a **coherent architectural responsability**, grouped according to the DDCO-Classic methodology. The sequence is determined by: conceptual roles, functional responsabilities, logical grouping of capabilities, the natural way an engineer organizes the system. Each block includes: a title, a technical description, the corresponding line range, and the exact code belonging to that block. The construction order must remain consistent across all regenerations for the same script, ensuring stable documentation and alignment with the visual illustration. DDCO-Classic does not follow dependency chains or execution order. Instead, it delivers the conceptual, responsibility-based organization of the Development Blocks, which is independent from the visual layout of the script and from the Script Breakdown Index. | Ordered list of Development Blocks with code. |
 | **4. Visual Illustration** | Roberto | Creates a full-script illustration. Adds numbered blue boxes on the left margin—one per Development Block—to produce a visual map of the script’s construction order. | Visual architecture diagram included in README. |
 | **5. README Integration** | Roberto | Manually inserts each Development Block into its correct Script Breakdown title or subtitle. Includes descriptions, code, and breakdown details as needed. | Fully populated Script Breakdown section. |
 | **6. Manual Completion of Remaining Sections** | Roberto | Fills any empty titles or subtitles with explanations, descriptions, or clarifications based on the script’s content. Ensures no section remains undocumented. | Complete, consistent, professional README. |
 
 * **NOTICE:**
-    * All **PRO** scripts are built around a **functional core**, which naturally places them under the **Core‑First DDCO variant**. This architecture is inherently more logical, structured, and easier to understand, even if it results in longer scripts. Core‑First ensures modularity, clarity, and a professional engineering flow across all projects by default.
+All PRO scripts in this repository follow the DDCO‑Classic variant of the Development‑Driven Construction Order methodology.
+
+This variant organizes the script according to conceptual responsibilities, grouping modules by their architectural role rather than by dependency chains.
+
+DDCO‑Classic produces clear, modular, and professionally structured scripts, making it the preferred methodology for all current and future projects in this repository.
 
     
