@@ -21,13 +21,18 @@ This project follows a modular architecture where each detection capability is i
 - a continuous watch subsystem  
 - a CLI dispatcher for user interaction  
 
+These components collectively form a structured and extensible monitoring system.
+
 
 
 ### 1.2.- Development Overview
 
-Although several software‑design methodologies exist (Top‑Down, Bottom‑Up, Layered Organization), this project follows a **Development‑Driven Design** approach. The construction strategy used is a project‑specific variant which I call **Core‑First**, where the script is built starting from its functional core and then extended through the modules that depend on it. This results in a clear, modular, and logically structured architecture.
+Although several software‑design methodologies exist (Top‑Down, Bottom‑Up, Layered Organization), this project follows the **Development‑Driven Construcction Order -Classic Variant.**. 
 
-Within this approach, the script is constructed in the natural order in which its functional components should be built. Each stage of the construction process is represented as a **development block**, a self‑contained unit of functionality that builds upon the previous ones and reflects the script’s architectural flow.
+Under this methodology, the script is constructed according to the **conceptual responsibilities of its components** rather than strict dependency order. The goal is to build the system in the same logical sequence in which an engineer naturally organizes its functional modules.
+
+This approach is not Core‑First.
+Instead of starting from a functional root and expanding through dependency chains, DDCO‑Classic organizes the script into development blocks, each representing a coherent unit of functionality grouped by purpose, clarity, and architectural role.
 
 
 #### 1.2.1 Development blocks Sequence
@@ -55,7 +60,7 @@ The script was developed following this sequence of **development blocks**:
 
 These development blocks are shown in the **illustration above**, placed on the left side of the code inside blue boxes. Their purpose is to provide a visual representation of the order in which the script was constructed.
 
-This approach results in a clean, intuitive, and logically consistent construction sequence that reflects how an engineer naturally builds a system from the inside out.
+This DDCO‑Classic approach results in a clean, intuitive, and logically structured construction sequence that reflects how an engineer naturally organizes a system from its primary responsibilities outward.
 
 
 ## 2.- System enviromenment and configuration
