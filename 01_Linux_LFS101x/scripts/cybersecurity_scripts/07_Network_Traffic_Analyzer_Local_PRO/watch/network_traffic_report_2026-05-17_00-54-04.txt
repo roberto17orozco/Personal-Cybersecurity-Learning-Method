@@ -1,0 +1,65 @@
+===============================================
+ Network Traffic Analyzer (Local) - Report
+ Version: 1.0.0
+ Date:    Sun May 17 12:54:04 AM MST 2026
+ File:    /home/robert/Documents/Cybersecurity/01_Linux_LFS101x/scripts/cybersecurity_scripts/07_Network_Traffic_Analyzer_Local_PRO/watch/capture_2026-05-17_00-53-53.pcap
+===============================================
+
+1. Protocol Summary
+-------------------
+
+===================================================================
+Protocol Hierarchy Statistics
+Filter: 
+
+frame                                    frames:53 bytes:10736
+  eth                                    frames:53 bytes:10736
+    ip                                   frames:53 bytes:10736
+      icmp                               frames:4 bytes:392
+      tcp                                frames:49 bytes:10344
+        ssh                              frames:22 bytes:8538
+===================================================================
+
+2. IP Endpoints
+--------------
+================================================================================
+IPv4 Endpoints
+Filter:<No Filter>
+                       | Packets | |  Bytes  | | Tx Packets | | Tx Bytes | | Rx Packets | | Rx Bytes |
+192.168.1.100                  53   10 kB              27      5,370 bytes         26      5,366 bytes 
+192.168.1.83                   53   10 kB              26      5,366 bytes         27      5,370 bytes 
+================================================================================
+
+3. TCP Connections
+-------------------
+      6 192.168.1.100  :35882 -> 192.168.1.83   :22    flags=0x0018
+      6 192.168.1.100  :35878 -> 192.168.1.83   :22    flags=0x0018
+      5 192.168.1.83   :22    -> 192.168.1.100  :35882 flags=0x0018
+      5 192.168.1.83   :22    -> 192.168.1.100  :35878 flags=0x0018
+      4 192.168.1.83   :22    -> 192.168.1.100  :35882 flags=0x0010
+      4 192.168.1.83   :22    -> 192.168.1.100  :35878 flags=0x0010
+      4 192.168.1.100  :35878 -> 192.168.1.83   :22    flags=0x0010
+      3 192.168.1.100  :35882 -> 192.168.1.83   :22    flags=0x0010
+      1 192.168.1.83   :80    -> 192.168.1.100  :35072 flags=0x0014
+      1 192.168.1.83   :80    -> 192.168.1.100  :35064 flags=0x0014
+      1 192.168.1.83   :22    -> 192.168.1.100  :35882 flags=0x0012
+      1 192.168.1.83   :22    -> 192.168.1.100  :35882 flags=0x0011
+      1 192.168.1.83   :22    -> 192.168.1.100  :35878 flags=0x0012
+      1 192.168.1.83   :22    -> 192.168.1.100  :35878 flags=0x0011
+      1 192.168.1.100  :35882 -> 192.168.1.83   :22    flags=0x0011
+      1 192.168.1.100  :35882 -> 192.168.1.83   :22    flags=0x0002
+      1 192.168.1.100  :35878 -> 192.168.1.83   :22    flags=0x0011
+      1 192.168.1.100  :35878 -> 192.168.1.83   :22    flags=0x0002
+      1 192.168.1.100  :35072 -> 192.168.1.83   :80    flags=0x0002
+      1 192.168.1.100  :35064 -> 192.168.1.83   :80    flags=0x0002
+
+4. Suspicious Activity
+----------------------
+===== Suspicious Activity (simple heuristic) =====
+
+5. Notes
+--------
+- This report was generated from real captured traffic.
+- For best results, generate traffic from Ubuntu to Kali (ping, ssh, curl, nmap).
+- Execute this script in your private home network, not in public Wi-Fi.
+
