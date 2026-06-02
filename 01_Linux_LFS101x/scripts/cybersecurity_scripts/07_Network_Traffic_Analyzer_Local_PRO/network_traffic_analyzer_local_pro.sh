@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 #
 # Network Traffic Analyzer (Local) - PRO Version
-# Core-First DDCO Architecture
+# Modular Architecture with Development Design Order Construction Order.
 # Designed in a public cafe, executed in a private home network
 # Requires: tshark or tcpdump
 
