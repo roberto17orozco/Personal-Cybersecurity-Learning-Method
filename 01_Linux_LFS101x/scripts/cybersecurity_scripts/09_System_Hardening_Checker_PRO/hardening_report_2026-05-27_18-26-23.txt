@@ -1,0 +1,44 @@
+========================================
+ System Hardening Report
+ Version: 1.0.0
+ Date: Wed May 27 06:26:23 PM MST 2026
+========================================
+
+1. File Permissions
+----------------------
+/etc/sudoers permissions: 440
+[+] /etc/sudoers permissions are secure (440)
+/etc/passwd permissions: 644
+[+] /etc/passwd permissions are secure (644)
+/etc/shadow permissions: 640
+[+] /etc/shadow permissions are secure (640)
+/etc/gshadow permissions: 640
+[+] /etc/gshadow permissions are secure (640)
+/etc/group permissions: 644
+[+] /etc/group permissions are secure (644)
+
+2. Running Services
+----------------------
+[+] Service not running: telnet
+[+] Service not running: vsftpd
+[+] Service not running: rsh
+[+] Service not running: rexec
+
+3. World-Writable Files
+-------------------------
+World-writable files: 231
+[!] High number of world-writable files
+
+4. SUID/SGID Binaries
+-----------------------
+SUID/SGID binaries: 56
+[+] SUID/SGID count acceptable
+
+5. Firewall Status
+-----------------------
+[!] UFW not installed
+
+6. SSH Configuration
+-----------------------
+[+] Root login over SSH is disabled
+
