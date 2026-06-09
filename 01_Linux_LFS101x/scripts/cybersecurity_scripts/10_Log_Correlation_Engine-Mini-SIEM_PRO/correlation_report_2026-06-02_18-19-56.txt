@@ -1,0 +1,44 @@
+=============================================
+ Log Correlation Engine (Mini-SIEM)
+ Version: 1.1.0
+ Date: Tue Jun  2 06:19:56 PM MST 2026
+=============================================
+
+1. Failed SSH Attempts
+------------------------------
+[33m[!][0m No failed SSH attempts found
+
+2. Suspicious Root Activity
+------------------------------
+[33m[!][0m No root SSH sessions found
+
+3. Kernel Security Events
+------------------------------
+Jun 02 15:21:49 kali kernel: AppArmor: AppArmor initialized
+Jun 02 15:21:49 kali kernel: audit: initializing netlink subsys (disabled)
+Jun 02 15:21:49 kali kernel: audit: type=2000 audit(1780438924.127:1): state=initialized audit_enabled=0 res=1
+Jun 02 15:21:49 kali kernel: AppArmor: AppArmor Filesystem Enabled
+Jun 02 15:21:49 kali kernel: AppArmor: AppArmor sha256 policy hashing enabled
+Jun 02 15:21:49 kali kernel: evm: security.selinux
+Jun 02 15:21:49 kali kernel: evm: security.SMACK64 (disabled)
+Jun 02 15:21:49 kali kernel: evm: security.SMACK64EXEC (disabled)
+Jun 02 15:21:49 kali kernel: evm: security.SMACK64TRANSMUTE (disabled)
+Jun 02 15:21:49 kali kernel: evm: security.SMACK64MMAP (disabled)
+Jun 02 15:21:49 kali kernel: evm: security.apparmor
+Jun 02 15:21:49 kali kernel: evm: security.ima
+Jun 02 15:21:49 kali kernel: evm: security.capability
+Jun 02 15:21:49 kali systemd[1]: systemd 260.1-1 running in system mode (+PAM +AUDIT +SELINUX +APPARMOR +IMA +IPE +SMACK +SECCOMP +GCRYPT -GNUTLS +OPENSSL +ACL +BLKID +CURL +ELFUTILS +FIDO2 +IDN2 +KMOD +LIBCRYPTSETUP +LIBCRYPTSETUP_PLUGINS +LIBFDISK +PCRE2 +PWQUALITY +P11KIT +QRENCODE +TPM2 +BZIP2 +LZ4 +XZ +ZLIB +ZSTD +BPF_FRAMEWORK +BTF -XKBCOMMON -UTMP +LIBARCHIVE)
+Jun 02 15:21:49 kali systemd[1]: systemd-pcrextend.socket - TPM PCR Measurements skipped, unmet condition check ConditionSecurity=measured-uki
+Jun 02 15:21:49 kali systemd[1]: systemd-pcrlock.socket - Make TPM PCR Policy skipped, unmet condition check ConditionSecurity=measured-uki
+Jun 02 15:21:49 kali systemd[1]: systemd-pcrmachine.service - TPM PCR Machine ID Measurement skipped, unmet condition check ConditionSecurity=measured-uki
+Jun 02 15:21:49 kali systemd[1]: systemd-pcrproduct.service - TPM NvPCR Product ID Measurement skipped, unmet condition check ConditionSecurity=measured-uki
+Jun 02 15:21:49 kali systemd[1]: systemd-tpm2-setup-early.service - Early TPM SRK Setup skipped, unmet condition check ConditionSecurity=measured-uki
+Jun 02 15:21:49 kali systemd-journald[317]: Collecting audit messages is disabled.
+Jun 02 15:21:50 kali systemd[1]: systemd-tpm2-setup.service - TPM SRK Setup skipped, unmet condition check ConditionSecurity=measured-uki
+Jun 02 15:21:50 kali systemd[1]: systemd-pcrnvdone.service - TPM PCR NvPCR Initialization Separator skipped, unmet condition check ConditionSecurity=measured-uki
+
+4. Multi-Source Alert Correlation
+------------------------------
+[32m[+][0m Correlating SSH failures with sudo events (24h window)...
+[33m[!][0m No SSH failures detected
+
