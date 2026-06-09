@@ -384,7 +384,7 @@ This function prints the startup message, validates that no arguments were provi
     1. The script might try to run `main()` before the function is defined.
     2. Bash would throw an error.
     3. Or the script would behave unpredictably.
-4. **In Bash function must be defined before it is called**.
+4. **In Bash functions must be defined before it is called**.
 
 ## 4. Report interpretation
 
