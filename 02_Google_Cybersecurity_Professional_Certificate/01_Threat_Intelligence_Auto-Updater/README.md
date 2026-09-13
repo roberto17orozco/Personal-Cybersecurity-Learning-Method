@@ -1,10 +1,12 @@
 # I.- Threat Intelligente Auto Updater
 
 ## 1.- Project purpose.
-This project delivers an internal SOC tool designed to automatically collect, standardize, and update Indicators of Compromise (IOCs) from trusted threat‑intelligence sources such as OTX, MalwareBazaar, and ThreatFox. Its purpose is to maintain continuously refreshed threat data that can be fed directly into SIEM and IDS platforms, enhancing early detection capabilities while reducing the manual workload for analysts.
+This project delivers an internal SOC tool designed to automatically collect, standardize, and update Indicators of Compromise (IOCs) from trusted threat‑intelligence sources such as OTX, MalwareBazaar, and ThreatFox. Its purpose is to maintain continuously refreshed threat data that can be fed directly into SIEM and IDS platforms, enhancing early detection capabilities while reducing the manual workload for analysts. `
 
 ## 2. Project structure
 
+Before starting writing code, make sure the project has a functional structure, like this one:
+```text  
 Threat_Intelligence_Auto_Updater/
 │
 ├── src/
@@ -29,10 +31,10 @@ Threat_Intelligence_Auto_Updater/
 │       └── __init__.py
 │
 ├── data/
-│   ├── raw/          ← se llena automáticamente (JSON crudos)
-│   └── processed/    ← se llena automáticamente (CSV/JSON normalizados)
+│   ├── raw/          ← generated automatically (raw JSON)
+│   └── processed/    ← generated automatically (normalized CSV/JSON)
 │
-├── logs/             ← se llena automáticamente (updater.log)
+├── logs/             ← generated automatically (updater.log)
 │
 ├── tests/
 │   ├── test_otx_fetcher.py
@@ -41,6 +43,8 @@ Threat_Intelligence_Auto_Updater/
 │
 ├── README.md
 └── requirements.txt
+```
+
 
 
 ### 2.1.- src/ - Source Code
